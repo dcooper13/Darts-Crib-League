@@ -1,4 +1,4 @@
-const DATA_URL = "https://kingocorporation-my.sharepoint.com/:u:/g/personal/kingocoops_kingocorporation_onmicrosoft_com/IQBqDy-JCZWGSpAxF3g1G2nYAf7EZDcZFcXaH1KRm0oD_mM?e=JgALup&download=1";
+const DATA_URL = "./tables.json";
 
 function renderTable(id, matrix) {
   const table = document.getElementById(id);
