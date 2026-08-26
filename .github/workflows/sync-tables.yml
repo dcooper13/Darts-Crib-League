@@ -1,0 +1,40 @@
+name: Update League Tables
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-tables:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v4
+
+      - name: Download latest league tables
+        run: |
+          curl -L --fail --retry 3 \
+            "https://kingocorporation-my.sharepoint.com/:u:/g/personal/kingocoops_kingocorporation_onmicrosoft_com/IQBqDy-JCZWGSpAxF3g1G2nYAf7EZDcZFcXaH1KRm0oD_mM?e=JgALup&download=1" \
+            -o tables.json
+
+      - name: Check JSON is valid
+        run: |
+          jq empty tables.json
+
+      - name: Commit updated tables
+        run: |
+          git config user.name "League Table Updater"
+          git config user.email "actions@github.com"
+          git add tables.json
+
+          if git diff --cached --quiet; then
+            echo "No league table changes to publish."
+          else
+            git commit -m "Update live league tables"
+            git push
+          fi
