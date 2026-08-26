@@ -1,9 +1,9 @@
 name: Update League Tables
 
 on:
-  schedule:
-    - cron: "*/5 * * * *"
-  workflow_dispatch:
+  repository_dispatch:
+    types:
+      - update-league-tables
 
 permissions:
   contents: write
@@ -16,11 +16,11 @@ jobs:
       - name: Check out website
         uses: actions/checkout@v4
 
-      - name: Download latest league tables
+      - name: Create tables.json from Power Automate
+        env:
+          LEAGUE_DATA: ${{ toJson(github.event.client_payload) }}
         run: |
-          curl -L --fail --retry 3 \
-            "https://kingocorporation-my.sharepoint.com/:u:/g/personal/kingocoops_kingocorporation_onmicrosoft_com/IQBqDy-JCZWGSpAxF3g1G2nYAf7EZDcZFcXaH1KRm0oD_mM?e=JgALup&download=1" \
-            -o tables.json
+          printf '%s' "$LEAGUE_DATA" > tables.json
 
       - name: Check JSON is valid
         run: |
@@ -30,6 +30,7 @@ jobs:
         run: |
           git config user.name "League Table Updater"
           git config user.email "actions@github.com"
+
           git add tables.json
 
           if git diff --cached --quiet; then
