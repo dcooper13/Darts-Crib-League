@@ -443,6 +443,14 @@
       "type": "League"
     },
     {
+      "awayTeam": "",
+      "bye": false,
+      "date": "15/09/26",
+      "homeTeam": "",
+      "played": false,
+      "type": "League"
+    },
+    {
       "awayTeam": "Falconers",
       "bye": false,
       "date": "22/09/26",
@@ -475,6 +483,14 @@
       "type": "League"
     },
     {
+      "awayTeam": "",
+      "bye": false,
+      "date": "22/09/26",
+      "homeTeam": "",
+      "played": false,
+      "type": "League"
+    },
+    {
       "awayTeam": "Horseshoe",
       "bye": false,
       "date": "29/09/26",
@@ -503,6 +519,14 @@
       "bye": true,
       "date": "29/09/26",
       "homeTeam": "Falconers",
+      "played": false,
+      "type": "League"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "29/09/26",
+      "homeTeam": "",
       "played": false,
       "type": "League"
     },
@@ -547,6 +571,14 @@
       "type": "League"
     },
     {
+      "awayTeam": "",
+      "bye": false,
+      "date": "06/10/26",
+      "homeTeam": "",
+      "played": false,
+      "type": "League"
+    },
+    {
       "awayTeam": "Horseshoe",
       "bye": false,
       "date": "13/10/26",
@@ -575,6 +607,14 @@
       "bye": true,
       "date": "13/10/26",
       "homeTeam": "N.H. Nomads",
+      "played": false,
+      "type": "League"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "13/10/26",
+      "homeTeam": "",
       "played": false,
       "type": "League"
     },
@@ -611,6 +651,14 @@
       "type": "League"
     },
     {
+      "awayTeam": "",
+      "bye": false,
+      "date": "20/10/26",
+      "homeTeam": "",
+      "played": false,
+      "type": "League"
+    },
+    {
       "awayTeam": "Houghton Arms",
       "bye": false,
       "date": "27/10/26",
@@ -639,6 +687,14 @@
       "bye": true,
       "date": "27/10/26",
       "homeTeam": "Gardeners Arms",
+      "played": false,
+      "type": "League"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "27/10/26",
+      "homeTeam": "",
       "played": false,
       "type": "League"
     },
@@ -675,6 +731,14 @@
       "type": "League"
     },
     {
+      "awayTeam": "",
+      "bye": false,
+      "date": "03/11/26",
+      "homeTeam": "",
+      "played": false,
+      "type": "League"
+    },
+    {
       "awayTeam": "Railway Hollingwood",
       "bye": false,
       "date": "10/11/26",
@@ -707,6 +771,54 @@
       "type": "League"
     },
     {
+      "awayTeam": "",
+      "bye": false,
+      "date": "10/11/26",
+      "homeTeam": "",
+      "played": false,
+      "type": "League"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "17/11/26",
+      "homeTeam": "",
+      "played": false,
+      "type": "Cup 1st Round"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "17/11/26",
+      "homeTeam": "",
+      "played": false,
+      "type": "Cup 1st Round"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "17/11/26",
+      "homeTeam": "",
+      "played": false,
+      "type": "Cup 1st Round"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "17/11/26",
+      "homeTeam": "",
+      "played": false,
+      "type": "Cup 1st Round"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "17/11/26",
+      "homeTeam": "",
+      "played": false,
+      "type": "Cup 1st Round"
+    },
+    {
       "awayTeam": "Willow Tavern",
       "bye": false,
       "date": "24/11/26",
@@ -735,6 +847,14 @@
       "bye": true,
       "date": "24/11/26",
       "homeTeam": "Falconers",
+      "played": false,
+      "type": "League"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "24/11/26",
+      "homeTeam": "",
       "played": false,
       "type": "League"
     },
@@ -779,6 +899,94 @@
       "type": "League"
     },
     {
+      "awayTeam": "",
+      "bye": false,
+      "date": "01/12/26",
+      "homeTeam": "",
+      "played": false,
+      "type": "League"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "08/12/26",
+      "homeTeam": "",
+      "played": false,
+      "type": "Darts Cup Semi"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "08/12/26",
+      "homeTeam": "",
+      "played": false,
+      "type": "Darts Cup Semi"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "08/12/26",
+      "homeTeam": "",
+      "played": false,
+      "type": "Darts Cup Semi"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "08/12/26",
+      "homeTeam": "",
+      "played": false,
+      "type": "Darts Cup Semi"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "08/12/26",
+      "homeTeam": "",
+      "played": false,
+      "type": "Darts Cup Semi"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "15/12/26",
+      "homeTeam": "",
+      "played": false,
+      "type": "Crib Cup Semi"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "15/12/26",
+      "homeTeam": "",
+      "played": false,
+      "type": "Crib Cup Semi"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "15/12/26",
+      "homeTeam": "",
+      "played": false,
+      "type": "Crib Cup Semi"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "15/12/26",
+      "homeTeam": "",
+      "played": false,
+      "type": "Crib Cup Semi"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "15/12/26",
+      "homeTeam": "",
+      "played": false,
+      "type": "Crib Cup Semi"
+    },
+    {
       "awayTeam": "Houghton Arms",
       "bye": false,
       "date": "05/01/27",
@@ -807,6 +1015,14 @@
       "bye": true,
       "date": "05/01/27",
       "homeTeam": "N.H. Nomads",
+      "played": false,
+      "type": "League"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "05/01/27",
+      "homeTeam": "",
       "played": false,
       "type": "League"
     },
@@ -843,6 +1059,102 @@
       "type": "League"
     },
     {
+      "awayTeam": "",
+      "bye": false,
+      "date": "12/01/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "League"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "19/01/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Darts Cup Final"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "19/01/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Darts Cup Final"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "19/01/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Darts Cup Final"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "19/01/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Darts Cup Final"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "19/01/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Darts Cup Final"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "26/01/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Crib Cup Final"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "26/01/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Crib Cup Final"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "26/01/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Crib Cup Final"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "26/01/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Crib Cup Final"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "26/01/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Crib Cup Final"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "28/01/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Meeting"
+    },
+    {
       "awayTeam": "Railway Hollingwood",
       "bye": false,
       "date": "02/02/27",
@@ -875,6 +1187,14 @@
       "type": "League"
     },
     {
+      "awayTeam": "",
+      "bye": false,
+      "date": "02/02/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "League"
+    },
+    {
       "awayTeam": "Willow Tavern",
       "bye": false,
       "date": "09/02/27",
@@ -903,6 +1223,14 @@
       "bye": true,
       "date": "09/02/27",
       "homeTeam": "Railway Hollingwood",
+      "played": false,
+      "type": "League"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "09/02/27",
+      "homeTeam": "",
       "played": false,
       "type": "League"
     },
@@ -939,6 +1267,14 @@
       "type": "League"
     },
     {
+      "awayTeam": "",
+      "bye": false,
+      "date": "16/02/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "League"
+    },
+    {
       "awayTeam": "Gardeners Arms",
       "bye": false,
       "date": "23/02/27",
@@ -971,6 +1307,14 @@
       "type": "League"
     },
     {
+      "awayTeam": "",
+      "bye": false,
+      "date": "23/02/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "League"
+    },
+    {
       "awayTeam": "Houghton Arms",
       "bye": false,
       "date": "02/03/27",
@@ -999,6 +1343,14 @@
       "bye": true,
       "date": "02/03/27",
       "homeTeam": "Gardeners Arms",
+      "played": false,
+      "type": "League"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "02/03/27",
+      "homeTeam": "",
       "played": false,
       "type": "League"
     },
@@ -1035,6 +1387,14 @@
       "type": "League"
     },
     {
+      "awayTeam": "",
+      "bye": false,
+      "date": "09/03/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "League"
+    },
+    {
       "awayTeam": "Horseshoe",
       "bye": false,
       "date": "16/03/27",
@@ -1063,6 +1423,14 @@
       "bye": true,
       "date": "16/03/27",
       "homeTeam": "N.H. Nomads",
+      "played": false,
+      "type": "League"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "16/03/27",
+      "homeTeam": "",
       "played": false,
       "type": "League"
     },
@@ -1097,7 +1465,223 @@
       "homeTeam": "Falconers",
       "played": false,
       "type": "League"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "23/03/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "League"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "01/04/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Meeting"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "13/04/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Crib Pairs"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "13/04/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Crib Pairs"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "13/04/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Crib Pairs"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "13/04/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Crib Pairs"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "13/04/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Crib Pairs"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "20/04/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Darts Pairs"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "20/04/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Darts Pairs"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "20/04/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Darts Pairs"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "20/04/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Darts Pairs"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "20/04/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Darts Pairs"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "27/04/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Crib Individuals"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "27/04/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Crib Individuals"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "27/04/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Crib Individuals"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "27/04/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Crib Individuals"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "27/04/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Crib Individuals"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "04/05/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Darts Individuals"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "04/05/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Darts Individuals"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "04/05/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Darts Individuals"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "04/05/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Darts Individuals"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "04/05/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Darts Individuals"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "11/05/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Finals Night"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "11/05/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Finals Night"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "11/05/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Finals Night"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "11/05/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Finals Night"
+    },
+    {
+      "awayTeam": "",
+      "bye": false,
+      "date": "11/05/27",
+      "homeTeam": "",
+      "played": false,
+      "type": "Finals Night"
     }
   ],
-  "updated": "2026-09-02T22:15:20.548Z"
+  "updated": "2026-09-02T22:20:03.208Z"
 }
