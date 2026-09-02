@@ -302,33 +302,30 @@ function renderFixtures(fixtures) {
                 type.toLowerCase();
 
 
-            /* =================================================
-               EMPTY CUP DATE
-               ================================================= */
+         /* =================================================
+   EMPTY CUP DATE
+   Only show an empty fixture row for Cup rounds.
+   Ignore empty League rows.
+   ================================================= */
 
-            if (!home && !away) {
+if (!home && !away) {
 
-                const row = document.createElement("div");
-                row.className = "fixture-row empty-fixture";
+    if (typeLower.includes("cup")) {
 
+        const row = document.createElement("div");
+        row.className = "fixture-row empty-fixture";
 
-                const text = document.createElement("div");
-                text.className = "empty-fixture-text";
+        const text = document.createElement("div");
+        text.className = "empty-fixture-text";
 
+        text.textContent = "Fixtures to be drawn";
 
-                if (typeLower === "cup") {
-                    text.textContent = "Fixtures to be drawn";
-                } else {
-                    text.textContent = "Fixtures to be confirmed";
-                }
+        row.appendChild(text);
+        list.appendChild(row);
+    }
 
-
-                row.appendChild(text);
-
-                list.appendChild(row);
-
-                return;
-            }
+    return;
+}
 
 
             /* =================================================
