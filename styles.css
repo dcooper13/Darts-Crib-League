@@ -837,3 +837,18 @@ footer,
             1fr;
     }
 }
+.fixture-row.empty-fixture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.empty-fixture-text {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 700;
+  color: #7a8798;
+  text-align: center;
+  font-style: italic;
+}
