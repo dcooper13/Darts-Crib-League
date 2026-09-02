@@ -1,306 +1,595 @@
 const DATA_URL = "./tables.json";
 
+
+/* =========================================================
+   TABLE FUNCTIONS
+   ========================================================= */
+
 function renderTable(id, matrix) {
-  const table = document.getElementById(id);
+    const table = document.getElementById(id);
 
-  if (!table) {
-    return;
-  }
+    if (!table || !matrix || matrix.length === 0) {
+        return;
+    }
 
-  table.innerHTML = "";
+    table.innerHTML = "";
 
-  if (!matrix || matrix.length < 2) {
-    return;
-  }
+    const thead = document.createElement("thead");
+    const tbody = document.createElement("tbody");
 
-  const [headers, ...rows] = matrix;
+    const headerRow = document.createElement("tr");
 
-  const thead = document.createElement("thead");
-  const headerRow = document.createElement("tr");
-
-  headers.forEach(header => {
-    const th = document.createElement("th");
-    th.textContent = header ?? "";
-    headerRow.appendChild(th);
-  });
-
-  thead.appendChild(headerRow);
-  table.appendChild(thead);
-
-  const tbody = document.createElement("tbody");
-
-  rows.forEach(row => {
-    const tr = document.createElement("tr");
-
-    row.forEach(value => {
-      const td = document.createElement("td");
-      td.textContent = value ?? "";
-      tr.appendChild(td);
+    matrix[0].forEach(value => {
+        const th = document.createElement("th");
+        th.textContent = value ?? "";
+        headerRow.appendChild(th);
     });
 
-    tbody.appendChild(tr);
-  });
+    thead.appendChild(headerRow);
 
-  table.appendChild(tbody);
+    for (let i = 1; i < matrix.length; i++) {
+        const row = document.createElement("tr");
+
+        matrix[i].forEach(value => {
+            const td = document.createElement("td");
+            td.textContent = value ?? "";
+            row.appendChild(td);
+        });
+
+        tbody.appendChild(row);
+    }
+
+    table.appendChild(thead);
+    table.appendChild(tbody);
 }
+
+
+/* =========================================================
+   FIND A TABLE INSIDE WEB_TABLES DATA
+   ========================================================= */
 
 function extractTable(data, title) {
-  const titleIndex = data.findIndex(
-    row => row && row[0] === title
-  );
+    if (!Array.isArray(data)) {
+        return [];
+    }
 
-  if (titleIndex === -1) {
+    const titleLower = title.toLowerCase();
+
+    for (let row = 0; row < data.length; row++) {
+        for (let col = 0; col < data[row].length; col++) {
+            const value = String(data[row][col] ?? "")
+                .trim()
+                .toLowerCase();
+
+            if (value === titleLower) {
+
+                let headerRow = row + 1;
+
+                while (
+                    headerRow < data.length &&
+                    data[headerRow].every(cell => String(cell ?? "").trim() === "")
+                ) {
+                    headerRow++;
+                }
+
+                if (headerRow >= data.length) {
+                    return [];
+                }
+
+                let startColumn = col;
+
+                while (
+                    startColumn > 0 &&
+                    String(data[headerRow][startColumn - 1] ?? "").trim() !== ""
+                ) {
+                    startColumn--;
+                }
+
+                let endColumn = col;
+
+                while (
+                    endColumn + 1 < data[headerRow].length &&
+                    String(data[headerRow][endColumn + 1] ?? "").trim() !== ""
+                ) {
+                    endColumn++;
+                }
+
+                const result = [];
+
+                result.push(
+                    data[headerRow].slice(startColumn, endColumn + 1)
+                );
+
+                for (let r = headerRow + 1; r < data.length; r++) {
+                    const rowValues =
+                        data[r].slice(startColumn, endColumn + 1);
+
+                    const isEmpty =
+                        rowValues.every(
+                            cell => String(cell ?? "").trim() === ""
+                        );
+
+                    if (isEmpty) {
+                        break;
+                    }
+
+                    result.push(rowValues);
+                }
+
+                return result;
+            }
+        }
+    }
+
     return [];
-  }
-
-  const output = [];
-
-  for (let i = titleIndex + 1; i < data.length; i++) {
-    const row = data[i];
-
-    if (!row) {
-      break;
-    }
-
-    const firstCell = row[0];
-
-    if (
-      firstCell === "Darts League" ||
-      firstCell === "Crib League" ||
-      firstCell === "Gallon League"
-    ) {
-      break;
-    }
-
-    const hasData = row.some(
-      value => value !== "" && value !== null
-    );
-
-    if (!hasData) {
-      if (output.length > 0) {
-        break;
-      }
-
-      continue;
-    }
-
-    output.push(row.slice(0, 10));
-  }
-
-  return output;
 }
+
+
+/* =========================================================
+   GROUP FIXTURES BY DATE
+   ========================================================= */
 
 function groupFixturesByDate(fixtures) {
-  const groups = new Map();
+    const groups = new Map();
 
-  fixtures.forEach(fixture => {
-    if (!fixture.date) {
-      return;
-    }
+    fixtures.forEach(fixture => {
+        const date = fixture.date || "Date TBC";
 
-    if (!groups.has(fixture.date)) {
-      groups.set(fixture.date, []);
-    }
+        if (!groups.has(date)) {
+            groups.set(date, []);
+        }
 
-    groups.get(fixture.date).push(fixture);
-  });
+        groups.get(date).push(fixture);
+    });
 
-  return groups;
+    return groups;
 }
+
+
+/* =========================================================
+   FIXTURE PAGE
+   ========================================================= */
 
 function renderFixtures(fixtures) {
-  const container = document.getElementById("fixtures");
+    const container = document.getElementById("fixtures");
 
-  if (!container) {
-    return;
-  }
-
-  container.innerHTML = "";
-
-  if (!Array.isArray(fixtures) || fixtures.length === 0) {
-    container.innerHTML =
-      '<section class="panel"><p>No fixtures are currently available.</p></section>';
-    return;
-  }
-
-  const groups = groupFixturesByDate(fixtures);
-
-  groups.forEach((matches, date) => {
-    const section = document.createElement("section");
-    section.className = "panel fixture-week";
-
-    const heading = document.createElement("div");
-    heading.className = "fixture-week-heading";
-
-    const dateTitle = document.createElement("h2");
-    dateTitle.textContent = date;
-
-    heading.appendChild(dateTitle);
-
-    const types = [
-      ...new Set(matches.map(match => match.type).filter(Boolean))
-    ];
-    const isMeeting = types.some(
-  type => type.trim().toLowerCase() === "meeting"
-);
-
-    if (types.length > 0) {
-      const typeLabel = document.createElement("div");
-      typeLabel.className = "fixture-type";
-      typeLabel.textContent = types.join(" / ");
-      heading.appendChild(typeLabel);
+    if (!container) {
+        return;
     }
 
-    section.appendChild(heading);
+    container.innerHTML = "";
 
-    // If this date is a Meeting, do not show any fixture or BYE rows.
-if (isMeeting) {
-  const meetingRow = document.createElement("div");
-  meetingRow.className = "fixture-row meeting-row";
+    if (!Array.isArray(fixtures) || fixtures.length === 0) {
+        container.innerHTML =
+            '<div class="panel">No fixtures available.</div>';
+        return;
+    }
 
-  // Use the populated team field as the meeting location/name
-  const meetingLocation = matches
-    .map(match => match.homeTeam || match.awayTeam || "")
-    .find(value => value && value.toUpperCase() !== "BYE");
+    const groups = groupFixturesByDate(fixtures);
 
-  const locationText = document.createElement("div");
-  locationText.className = "meeting-location";
-  locationText.textContent = meetingLocation || "Meeting";
 
-  meetingRow.appendChild(locationText);
-  section.appendChild(meetingRow);
+    groups.forEach((matches, date) => {
 
-  container.appendChild(section);
-  return;
-}
+        /* =================================================
+           CREATE DATE CARD
+           ================================================= */
 
-const list = document.createElement("div");
-list.className = "fixture-list";
+        const section = document.createElement("section");
+        section.className = "fixture-week";
 
-matches.forEach(match => {
-      // Meetings do not have fixtures or BYEs
-if (
-  match.type &&
-  match.type.trim().toLowerCase() === "meeting"
-) {
-  return;
-}
-      const row = document.createElement("div");
 
-      row.className = "fixture-row";
+        /* =================================================
+           DATE + TYPE HEADER
+           ================================================= */
 
-      if (match.played) {
-        row.classList.add("played");
-      }
+        const heading = document.createElement("div");
+        heading.className = "fixture-week-heading";
 
-      if (match.bye) {
-        row.classList.add("bye");
-      }
+        const dateTitle = document.createElement("h2");
+        dateTitle.textContent = date;
 
-     if (match.type && match.type.toLowerCase() === "meeting") {
+        heading.appendChild(dateTitle);
 
-  const meetingText = document.createElement("div");
-  meetingText.className = "meeting-label";
-  meetingText.textContent = "League Meeting";
 
-  row.classList.add("meeting");
-  row.appendChild(meetingText);
+        const types = [
+            ...new Set(
+                matches
+                    .map(match => match.type)
+                    .filter(type => type && type.trim() !== "")
+            )
+        ];
 
-} else if (match.bye) {
 
-  const team = document.createElement("div");
-  team.className = "bye-team";
-  team.textContent = match.homeTeam || match.awayTeam || "";
+        if (types.length > 0) {
+            const typeLabel = document.createElement("div");
+            typeLabel.className = "fixture-type";
+            typeLabel.textContent = types.join(" / ");
 
-  const byeText = document.createElement("div");
-  byeText.className = "bye-label";
-  byeText.textContent = "BYE";
+            heading.appendChild(typeLabel);
+        }
 
-  row.appendChild(team);
-  row.appendChild(byeText);
 
-} else {
-        const home = document.createElement("div");
-        home.className = "fixture-team home-team";
-        home.textContent = match.homeTeam || "";
+        section.appendChild(heading);
 
-        const versus = document.createElement("div");
-        versus.className = "fixture-v";
-        versus.textContent = "v";
 
-        const away = document.createElement("div");
-        away.className = "fixture-team away-team";
-        away.textContent = match.awayTeam || "";
+        /* =================================================
+           CHECK IF THIS DATE IS A MEETING
+           ================================================= */
 
-        row.appendChild(home);
-        row.appendChild(versus);
-        row.appendChild(away);
-      }
+        const isMeeting = types.some(type =>
+            type.trim().toLowerCase() === "meeting"
+        );
 
-      list.appendChild(row);
+
+        /* =================================================
+           MEETING
+           ================================================= */
+
+        if (isMeeting) {
+
+            const meetingRow = document.createElement("div");
+            meetingRow.className = "fixture-row meeting-row";
+
+
+            let meetingLocation = "";
+
+            matches.forEach(match => {
+
+                const home =
+                    String(match.homeTeam || "").trim();
+
+                const away =
+                    String(match.awayTeam || "").trim();
+
+
+                if (
+                    !meetingLocation &&
+                    home &&
+                    home.toUpperCase() !== "BYE"
+                ) {
+                    meetingLocation = home;
+                }
+
+
+                if (
+                    !meetingLocation &&
+                    away &&
+                    away.toUpperCase() !== "BYE"
+                ) {
+                    meetingLocation = away;
+                }
+
+            });
+
+
+            const locationText = document.createElement("div");
+            locationText.className = "meeting-location";
+
+            locationText.textContent =
+                meetingLocation || "Meeting location TBC";
+
+
+            meetingRow.appendChild(locationText);
+
+            section.appendChild(meetingRow);
+
+            container.appendChild(section);
+
+            return;
+        }
+
+
+        /* =================================================
+           NORMAL FIXTURE LIST
+           ================================================= */
+
+        const list = document.createElement("div");
+        list.className = "fixture-list";
+
+
+        matches.forEach(match => {
+
+            const home =
+                String(match.homeTeam || "").trim();
+
+            const away =
+                String(match.awayTeam || "").trim();
+
+            const type =
+                String(match.type || "").trim();
+
+            const typeLower =
+                type.toLowerCase();
+
+
+            /* =================================================
+               EMPTY CUP DATE
+               ================================================= */
+
+            if (!home && !away) {
+
+                const row = document.createElement("div");
+                row.className = "fixture-row empty-fixture";
+
+
+                const text = document.createElement("div");
+                text.className = "empty-fixture-text";
+
+
+                if (typeLower === "cup") {
+                    text.textContent = "Fixtures to be drawn";
+                } else {
+                    text.textContent = "Fixtures to be confirmed";
+                }
+
+
+                row.appendChild(text);
+
+                list.appendChild(row);
+
+                return;
+            }
+
+
+            /* =================================================
+               CREATE FIXTURE ROW
+               ================================================= */
+
+            const row = document.createElement("div");
+            row.className = "fixture-row";
+
+
+            if (match.played) {
+                row.classList.add("played");
+            }
+
+
+            /* =================================================
+               BYE
+               ================================================= */
+
+            if (match.bye) {
+
+                row.classList.add("bye");
+
+
+                let byeTeam = home;
+
+                if (!byeTeam || byeTeam.toUpperCase() === "BYE") {
+                    byeTeam = away;
+                }
+
+
+                const team = document.createElement("div");
+                team.className = "bye-team";
+                team.textContent = byeTeam;
+
+
+                const byeText = document.createElement("div");
+                byeText.className = "bye-label";
+                byeText.textContent = "BYE";
+
+
+                row.appendChild(team);
+                row.appendChild(byeText);
+
+
+                list.appendChild(row);
+
+                return;
+            }
+
+
+            /* =================================================
+               NORMAL MATCH
+               ================================================= */
+
+            const homeTeam = document.createElement("div");
+            homeTeam.className =
+                "fixture-team home-team";
+
+            homeTeam.textContent = home;
+
+
+            const versus = document.createElement("div");
+            versus.className = "fixture-v";
+            versus.textContent = "v";
+
+
+            const awayTeam = document.createElement("div");
+            awayTeam.className =
+                "fixture-team away-team";
+
+            awayTeam.textContent = away;
+
+
+            row.appendChild(homeTeam);
+            row.appendChild(versus);
+            row.appendChild(awayTeam);
+
+
+            list.appendChild(row);
+
+        });
+
+
+        section.appendChild(list);
+
+        container.appendChild(section);
+
     });
-
-    section.appendChild(list);
-    container.appendChild(section);
-  });
 }
+
+
+/* =========================================================
+   UPDATED TIME
+   ========================================================= */
+
+function renderUpdatedTime(updated) {
+    const element = document.getElementById("updated");
+
+    if (!element || !updated) {
+        return;
+    }
+
+    const date = new Date(updated);
+
+    if (Number.isNaN(date.getTime())) {
+        return;
+    }
+
+    const formatted =
+        date.toLocaleString("en-GB", {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit"
+        });
+
+
+    element.textContent =
+        `Last updated: ${formatted}`;
+}
+
+
+/* =========================================================
+   LOAD DATA
+   ========================================================= */
 
 async function loadSiteData() {
-  const status = document.getElementById("status");
+    try {
 
-  try {
-    if (status) {
-      status.textContent = "Loading...";
+        const response = await fetch(
+            `${DATA_URL}?t=${Date.now()}`,
+            {
+                cache: "no-store"
+            }
+        );
+
+
+        if (!response.ok) {
+            throw new Error(
+                `Could not load tables.json: ${response.status}`
+            );
+        }
+
+
+        const json = await response.json();
+
+
+        /* =================================================
+           UPDATED TIME
+           ================================================= */
+
+        renderUpdatedTime(json.updated);
+
+
+        /* =================================================
+           TABLES PAGE
+           ================================================= */
+
+        if (Array.isArray(json.data)) {
+
+            const darts =
+                extractTable(
+                    json.data,
+                    "Darts League"
+                );
+
+
+            const crib =
+                extractTable(
+                    json.data,
+                    "Crib League"
+                );
+
+
+            const gallon =
+                extractTable(
+                    json.data,
+                    "Gallon League"
+                );
+
+
+            if (document.getElementById("dartsTable")) {
+                renderTable(
+                    "dartsTable",
+                    darts
+                );
+            }
+
+
+            if (document.getElementById("cribTable")) {
+                renderTable(
+                    "cribTable",
+                    crib
+                );
+            }
+
+
+            if (document.getElementById("gallonTable")) {
+                renderTable(
+                    "gallonTable",
+                    gallon
+                );
+            }
+
+        }
+
+
+        /* =================================================
+           FIXTURE PAGE
+           ================================================= */
+
+        if (document.getElementById("fixtures")) {
+
+            renderFixtures(
+                Array.isArray(json.fixtures)
+                    ? json.fixtures
+                    : []
+            );
+
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+
+        const fixtures =
+            document.getElementById("fixtures");
+
+        if (fixtures) {
+            fixtures.innerHTML =
+                '<div class="panel">Unable to load fixtures at the moment.</div>';
+        }
+
+
+        const updated =
+            document.getElementById("updated");
+
+        if (updated) {
+            updated.textContent =
+                "Unable to load latest data";
+        }
+
     }
-
-    const response = await fetch(DATA_URL, {
-      cache: "no-store"
-    });
-
-    if (!response.ok) {
-      throw new Error(
-        `Unable to load league data (${response.status})`
-      );
-    }
-
-    const result = await response.json();
-
-    if (document.getElementById("darts")) {
-      const data = result.data;
-
-      if (!Array.isArray(data)) {
-        throw new Error("League table data is not in the expected format.");
-      }
-
-      renderTable("darts", extractTable(data, "Darts League"));
-      renderTable("crib", extractTable(data, "Crib League"));
-      renderTable("gallon", extractTable(data, "Gallon League"));
-    }
-
-    if (document.getElementById("fixtures")) {
-      renderFixtures(result.fixtures || []);
-    }
-
-    const updated = result.updated
-      ? new Date(result.updated).toLocaleString("en-GB")
-      : "Unknown";
-
-    if (status) {
-      status.textContent = `Last updated: ${updated}`;
-      status.classList.remove("error");
-    }
-
-  } catch (error) {
-    console.error(error);
-
-    if (status) {
-      status.textContent =
-        "The live league information could not be loaded.";
-      status.classList.add("error");
-    }
-  }
 }
+
+
+/* =========================================================
+   INITIAL LOAD
+   ========================================================= */
 
 loadSiteData();
 
-setInterval(loadSiteData, 60000);
+
+/* =========================================================
+   AUTOMATIC REFRESH EVERY 60 SECONDS
+   ========================================================= */
+
+setInterval(
+    loadSiteData,
+    60000
+);
