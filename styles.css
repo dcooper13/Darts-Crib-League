@@ -331,3 +331,16 @@ footer {
     padding-bottom: 24px;
   }
 }
+.fixture-row.meeting {
+  display: block;
+  text-align: center;
+  background: #eef3f9;
+}
+
+.meeting-label {
+  font-size: 18px;
+  font-weight: 700;
+  color: #294a78;
+  text-align: center;
+  padding: 6px;
+}
