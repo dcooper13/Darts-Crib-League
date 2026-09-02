@@ -140,6 +140,9 @@ function renderFixtures(fixtures) {
     const types = [
       ...new Set(matches.map(match => match.type).filter(Boolean))
     ];
+    const isMeeting = types.some(
+  type => type.trim().toLowerCase() === "meeting"
+);
 
     if (types.length > 0) {
       const typeLabel = document.createElement("div");
@@ -150,10 +153,16 @@ function renderFixtures(fixtures) {
 
     section.appendChild(heading);
 
-    const list = document.createElement("div");
-    list.className = "fixture-list";
+    // If this date is a Meeting, do not show any fixture or BYE rows.
+if (isMeeting) {
+  container.appendChild(section);
+  return;
+}
 
-    matches.forEach(match => {
+const list = document.createElement("div");
+list.className = "fixture-list";
+
+matches.forEach(match => {
       // Meetings do not have fixtures or BYEs
 if (
   match.type &&
