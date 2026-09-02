@@ -344,3 +344,14 @@ footer {
   text-align: center;
   padding: 6px;
 }
+.meeting-row {
+  display: block;
+  text-align: left;
+  background: #f1f4f8;
+}
+
+.meeting-location {
+  font-size: 18px;
+  font-weight: 700;
+  color: #20334f;
+}
