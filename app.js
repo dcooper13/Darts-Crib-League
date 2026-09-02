@@ -166,18 +166,29 @@ function renderFixtures(fixtures) {
         row.classList.add("bye");
       }
 
-      if (match.bye) {
-        const team = document.createElement("div");
-        team.className = "bye-team";
-        team.textContent = match.homeTeam || match.awayTeam || "";
+     if (match.type && match.type.toLowerCase() === "meeting") {
 
-        const byeText = document.createElement("div");
-        byeText.className = "bye-label";
-        byeText.textContent = "BYE";
+  const meetingText = document.createElement("div");
+  meetingText.className = "meeting-label";
+  meetingText.textContent = "League Meeting";
 
-        row.appendChild(team);
-        row.appendChild(byeText);
-      } else {
+  row.classList.add("meeting");
+  row.appendChild(meetingText);
+
+} else if (match.bye) {
+
+  const team = document.createElement("div");
+  team.className = "bye-team";
+  team.textContent = match.homeTeam || match.awayTeam || "";
+
+  const byeText = document.createElement("div");
+  byeText.className = "bye-label";
+  byeText.textContent = "BYE";
+
+  row.appendChild(team);
+  row.appendChild(byeText);
+
+} else {
         const home = document.createElement("div");
         home.className = "fixture-team home-team";
         home.textContent = match.homeTeam || "";
