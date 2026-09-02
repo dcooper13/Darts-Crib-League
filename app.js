@@ -154,6 +154,13 @@ function renderFixtures(fixtures) {
     list.className = "fixture-list";
 
     matches.forEach(match => {
+      // Meetings do not have fixtures or BYEs
+if (
+  match.type &&
+  match.type.trim().toLowerCase() === "meeting"
+) {
+  return;
+}
       const row = document.createElement("div");
 
       row.className = "fixture-row";
