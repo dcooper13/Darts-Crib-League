@@ -155,6 +155,21 @@ function renderFixtures(fixtures) {
 
     // If this date is a Meeting, do not show any fixture or BYE rows.
 if (isMeeting) {
+  const meetingRow = document.createElement("div");
+  meetingRow.className = "fixture-row meeting-row";
+
+  // Use the populated team field as the meeting location/name
+  const meetingLocation = matches
+    .map(match => match.homeTeam || match.awayTeam || "")
+    .find(value => value && value.toUpperCase() !== "BYE");
+
+  const locationText = document.createElement("div");
+  locationText.className = "meeting-location";
+  locationText.textContent = meetingLocation || "Meeting";
+
+  meetingRow.appendChild(locationText);
+  section.appendChild(meetingRow);
+
   container.appendChild(section);
   return;
 }
