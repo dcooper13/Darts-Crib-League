@@ -1,52 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Failsworth Darts & Crib League Tables</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Failsworth Darts & Crib League Tables
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="styles.css"
+    >
 </head>
-<body>
 
-  <header class="site-header">
-    <div class="eyebrow">LIVE STANDINGS</div>
-    <h1>Darts & Crib League Tables</h1>
 
-    <nav class="top-nav" aria-label="Main navigation">
-      <a href="fixtures.html">Fixtures</a>
-      <a href="index.html" class="active">Tables</a>
-    </nav>
+<body class="tables-page">
 
-    <p id="status">Loading league tables...</p>
-  </header>
+    <header class="site-header">
 
-  <main class="page-wrap">
-    <section class="panel">
-      <h2>Darts League</h2>
-      <div class="table-scroll">
-        <table id="darts"></table>
-      </div>
-    </section>
+        <p class="eyebrow">
+            LIVE STANDINGS
+        </p>
 
-    <section class="panel">
-      <h2>Crib League</h2>
-      <div class="table-scroll">
-        <table id="crib"></table>
-      </div>
-    </section>
+        <h1>
+            Darts & Crib League Tables
+        </h1>
 
-    <section class="panel">
-      <h2>Gallon League</h2>
-      <div class="table-scroll">
-        <table id="gallon"></table>
-      </div>
-    </section>
-  </main>
+        <nav class="top-nav">
+            <a
+                href="fixtures.html"
+                class="fixtures-button"
+            >
+                Fixtures
+            </a>
 
-  <footer>
-    Read-only league information. The source workbook is not shared with visitors.
-  </footer>
+            <a
+                href="index.html"
+                class="tables-button active"
+            >
+                Tables
+            </a>
+        </nav>
 
-  <script src="app.js"></script>
+        <p
+            id="updated"
+            class="updated"
+        >
+            Loading league tables...
+        </p>
+
+    </header>
+
+
+    <main class="page-wrap">
+
+
+        <!-- DARTS TABLE -->
+
+        <section class="panel darts-table-panel">
+
+            <h2>
+                Darts League
+            </h2>
+
+            <div class="table-wrap">
+
+                <table id="dartsTable"></table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CRIB TABLE -->
+
+        <section class="panel crib-table-panel">
+
+            <h2>
+                Crib League
+            </h2>
+
+            <div class="table-wrap">
+
+                <table id="cribTable"></table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- GALLON TABLE -->
+
+        <section class="panel gallon-table-panel">
+
+            <h2>
+                Gallon League
+            </h2>
+
+            <div class="table-wrap">
+
+                <table id="gallonTable"></table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        Read-only league information.
+        Results are entered in the league workbook
+        and automatically reflected here.
+
+    </footer>
+
+
+    <script src="app.js"></script>
+
 </body>
+
 </html>
