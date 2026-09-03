@@ -134,7 +134,7 @@
     ],
     [
       7,
-      "Railway Hollingwood",
+      "Railway Hollinwood",
       0,
       0,
       0,
@@ -266,7 +266,7 @@
     ],
     [
       7,
-      "Railway Hollingwood",
+      "Railway Hollinwood",
       0,
       0,
       0,
@@ -326,7 +326,7 @@
     ],
     [
       1,
-      "Railway Hollingwood",
+      "Railway Hollinwood",
       0,
       0,
       0,
@@ -438,7 +438,7 @@
       "awayTeam": "BYE",
       "bye": true,
       "date": "15/09/26",
-      "homeTeam": "Railway Hollingwood",
+      "homeTeam": "Railway Hollinwood",
       "played": false,
       "type": ""
     },
@@ -446,7 +446,7 @@
       "awayTeam": "Falconers",
       "bye": false,
       "date": "22/09/26",
-      "homeTeam": "Railway Hollingwood",
+      "homeTeam": "Railway Hollinwood",
       "played": false,
       "type": "League"
     },
@@ -483,7 +483,7 @@
       "type": "League"
     },
     {
-      "awayTeam": "Railway Hollingwood",
+      "awayTeam": "Railway Hollinwood",
       "bye": false,
       "date": "29/09/26",
       "homeTeam": "N.H. Nomads",
@@ -531,7 +531,7 @@
       "type": ""
     },
     {
-      "awayTeam": "Railway Hollingwood",
+      "awayTeam": "Railway Hollinwood",
       "bye": false,
       "date": "06/10/26",
       "homeTeam": "Gardeners Arms",
@@ -566,7 +566,7 @@
       "awayTeam": "Willow Tavern",
       "bye": false,
       "date": "13/10/26",
-      "homeTeam": "Railway Hollingwood",
+      "homeTeam": "Railway Hollinwood",
       "played": false,
       "type": ""
     },
