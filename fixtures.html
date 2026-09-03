@@ -1,33 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Failsworth Darts & Crib League Fixtures</title>
-  <link rel="stylesheet" href="styles.css">
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Failsworth Darts & Crib League Fixtures
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="styles.css"
+    >
+
 </head>
-<body>
 
-  <header class="site-header">
-    <div class="eyebrow">LEAGUE FIXTURES</div>
-    <h1>Failsworth Darts & Crib League</h1>
 
-    <nav class="top-nav" aria-label="Main navigation">
-      <a href="fixtures.html" class="active">Fixtures</a>
-      <a href="index.html">Tables</a>
-    </nav>
+<body class="fixtures-page">
 
-    <p id="status">Loading fixtures...</p>
-  </header>
 
-  <main class="page-wrap">
-    <div id="fixtures"></div>
-  </main>
+    <header class="site-header">
 
-  <footer>
-    Played fixtures are shown in grey. Results are entered separately and reflected in the league tables.
-  </footer>
+        <p class="eyebrow">
+            LEAGUE FIXTURES
+        </p>
 
-  <script src="app.js"></script>
+        <h1>
+            Failsworth Darts & Crib League
+        </h1>
+
+
+        <nav class="top-nav">
+
+            <a
+                href="fixtures.html"
+                class="fixtures-button active"
+            >
+                Fixtures
+            </a>
+
+            <a
+                href="index.html"
+                class="tables-button"
+            >
+                Tables
+            </a>
+
+        </nav>
+
+
+        <p
+            id="updated"
+            class="updated"
+        >
+            Loading fixtures...
+        </p>
+
+    </header>
+
+
+    <main class="page-wrap">
+
+        <div id="fixtures"></div>
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        Played fixtures are shown in grey.
+        Results are entered separately and reflected
+        in the league tables.
+
+    </footer>
+
+
+    <script src="app.js"></script>
+
 </body>
+
 </html>
