@@ -443,68 +443,268 @@
       "type": ""
     },
     {
-      "awayTeam": "",
+      "awayTeam": "Falconers",
       "bye": false,
       "date": "22/09/26",
-      "homeTeam": "",
+      "homeTeam": "Railway Hollingwood",
       "played": false,
       "type": "League"
     },
     {
-      "awayTeam": "",
+      "awayTeam": "Gardeners Arms",
+      "bye": false,
+      "date": "22/09/26",
+      "homeTeam": "Horseshoe",
+      "played": false,
+      "type": ""
+    },
+    {
+      "awayTeam": "N.H. Nomads",
+      "bye": false,
+      "date": "22/09/26",
+      "homeTeam": "Houghton Arms",
+      "played": false,
+      "type": ""
+    },
+    {
+      "awayTeam": "BYE",
+      "bye": true,
+      "date": "22/09/26",
+      "homeTeam": "Willow Tavern",
+      "played": false,
+      "type": ""
+    },
+    {
+      "awayTeam": "Horseshoe",
       "bye": false,
       "date": "29/09/26",
-      "homeTeam": "",
+      "homeTeam": "Willow Tavern",
       "played": false,
       "type": "League"
     },
     {
-      "awayTeam": "",
+      "awayTeam": "Railway Hollingwood",
+      "bye": false,
+      "date": "29/09/26",
+      "homeTeam": "N.H. Nomads",
+      "played": false,
+      "type": ""
+    },
+    {
+      "awayTeam": "Houghton Arms",
+      "bye": false,
+      "date": "29/09/26",
+      "homeTeam": "Gardeners Arms",
+      "played": false,
+      "type": ""
+    },
+    {
+      "awayTeam": "BYE",
+      "bye": true,
+      "date": "29/09/26",
+      "homeTeam": "Falconers",
+      "played": false,
+      "type": ""
+    },
+    {
+      "awayTeam": "BYE",
+      "bye": true,
+      "date": "01/10/26",
+      "homeTeam": "Horseshoe",
+      "played": false,
+      "type": "Meeting"
+    },
+    {
+      "awayTeam": "Falconers",
       "bye": false,
       "date": "06/10/26",
-      "homeTeam": "",
+      "homeTeam": "N.H. Nomads",
       "played": false,
       "type": "League"
     },
     {
-      "awayTeam": "",
+      "awayTeam": "Houghton Arms",
+      "bye": false,
+      "date": "06/10/26",
+      "homeTeam": "Willow Tavern",
+      "played": false,
+      "type": ""
+    },
+    {
+      "awayTeam": "Railway Hollingwood",
+      "bye": false,
+      "date": "06/10/26",
+      "homeTeam": "Gardeners Arms",
+      "played": false,
+      "type": ""
+    },
+    {
+      "awayTeam": "BYE",
+      "bye": true,
+      "date": "06/10/26",
+      "homeTeam": "Horseshoe",
+      "played": false,
+      "type": ""
+    },
+    {
+      "awayTeam": "Horseshoe",
       "bye": false,
       "date": "13/10/26",
-      "homeTeam": "",
+      "homeTeam": "Houghton Arms",
       "played": false,
       "type": "League"
     },
     {
-      "awayTeam": "",
+      "awayTeam": "Gardeners Arms",
+      "bye": false,
+      "date": "13/10/26",
+      "homeTeam": "Falconers",
+      "played": false,
+      "type": ""
+    },
+    {
+      "awayTeam": "Willow Tavern",
+      "bye": false,
+      "date": "13/10/26",
+      "homeTeam": "Railway Hollingwood",
+      "played": false,
+      "type": ""
+    },
+    {
+      "awayTeam": "BYE",
+      "bye": true,
+      "date": "13/10/26",
+      "homeTeam": "N.H. Nomads",
+      "played": false,
+      "type": ""
+    },
+    {
+      "awayTeam": "N.H. Nomads",
       "bye": false,
       "date": "20/10/26",
-      "homeTeam": "",
+      "homeTeam": "Gardeners Arms",
       "played": false,
       "type": "League"
     },
     {
-      "awayTeam": "",
+      "awayTeam": "Railway Hollingwood",
+      "bye": false,
+      "date": "20/10/26",
+      "homeTeam": "Horseshoe",
+      "played": false,
+      "type": ""
+    },
+    {
+      "awayTeam": "Falconers",
+      "bye": false,
+      "date": "20/10/26",
+      "homeTeam": "Willow Tavern",
+      "played": false,
+      "type": ""
+    },
+    {
+      "awayTeam": "BYE",
+      "bye": true,
+      "date": "20/10/26",
+      "homeTeam": "Houghton Arms",
+      "played": false,
+      "type": ""
+    },
+    {
+      "awayTeam": "Houghton Arms",
       "bye": false,
       "date": "27/10/26",
-      "homeTeam": "",
+      "homeTeam": "Railway Hollingwood",
       "played": false,
       "type": "League"
     },
     {
-      "awayTeam": "",
+      "awayTeam": "Willow Tavern",
+      "bye": false,
+      "date": "27/10/26",
+      "homeTeam": "N.H. Nomads",
+      "played": false,
+      "type": ""
+    },
+    {
+      "awayTeam": "Horseshoe",
+      "bye": false,
+      "date": "27/10/26",
+      "homeTeam": "Falconers",
+      "played": false,
+      "type": ""
+    },
+    {
+      "awayTeam": "BYE",
+      "bye": true,
+      "date": "27/10/26",
+      "homeTeam": "Gardeners Arms",
+      "played": false,
+      "type": ""
+    },
+    {
+      "awayTeam": "Gardeners Arms",
       "bye": false,
       "date": "03/11/26",
-      "homeTeam": "",
+      "homeTeam": "Willow Tavern",
       "played": false,
       "type": "League"
     },
     {
-      "awayTeam": "",
+      "awayTeam": "Falconers",
+      "bye": false,
+      "date": "03/11/26",
+      "homeTeam": "Houghton Arms",
+      "played": false,
+      "type": ""
+    },
+    {
+      "awayTeam": "N.H. Nomads",
+      "bye": false,
+      "date": "03/11/26",
+      "homeTeam": "Horseshoe",
+      "played": false,
+      "type": ""
+    },
+    {
+      "awayTeam": "BYE",
+      "bye": true,
+      "date": "03/11/26",
+      "homeTeam": "Railway Hollingwood",
+      "played": false,
+      "type": ""
+    },
+    {
+      "awayTeam": "Railway Hollingwood",
       "bye": false,
       "date": "10/11/26",
-      "homeTeam": "",
+      "homeTeam": "Falconers",
       "played": false,
       "type": "League"
+    },
+    {
+      "awayTeam": "Horseshoe",
+      "bye": false,
+      "date": "10/11/26",
+      "homeTeam": "Gardeners Arms",
+      "played": false,
+      "type": ""
+    },
+    {
+      "awayTeam": "Houghton Arms",
+      "bye": false,
+      "date": "10/11/26",
+      "homeTeam": "N.H. Nomads",
+      "played": false,
+      "type": ""
+    },
+    {
+      "awayTeam": "BYE",
+      "bye": true,
+      "date": "10/11/26",
+      "homeTeam": "Willow Tavern",
+      "played": false,
+      "type": ""
     },
     {
       "awayTeam": "",
@@ -512,15 +712,39 @@
       "date": "17/11/26",
       "homeTeam": "",
       "played": false,
+      "type": "Cup 1st Round"
+    },
+    {
+      "awayTeam": "Willow Tavern",
+      "bye": false,
+      "date": "24/11/26",
+      "homeTeam": "Horseshoe",
+      "played": false,
       "type": "League"
     },
     {
-      "awayTeam": "",
+      "awayTeam": "N.H. Nomads",
       "bye": false,
       "date": "24/11/26",
-      "homeTeam": "",
+      "homeTeam": "Railway Hollingwood",
       "played": false,
-      "type": "League"
+      "type": ""
+    },
+    {
+      "awayTeam": "Gardeners Arms",
+      "bye": false,
+      "date": "24/11/26",
+      "homeTeam": "Houghton Arms",
+      "played": false,
+      "type": ""
+    },
+    {
+      "awayTeam": "BYE",
+      "bye": true,
+      "date": "24/11/26",
+      "homeTeam": "Falconers",
+      "played": false,
+      "type": ""
     },
     {
       "awayTeam": "",
@@ -699,5 +923,5 @@
       "type": "League"
     }
   ],
-  "updated": "2026-09-03T11:50:03.539Z"
+  "updated": "2026-09-03T11:55:03.835Z"
 }
