@@ -2,127 +2,323 @@ const DATA_URL = "./tables.json";
 
 
 /* =========================================================
-   TABLE FUNCTIONS
+   LEAGUE TABLE RENDERING
    ========================================================= */
 
-function renderTable(id, matrix) {
-    const table = document.getElementById(id);
+function renderTable(tableId, rows) {
 
-    if (!table || !matrix || matrix.length === 0) {
+    const table =
+        document.getElementById(tableId);
+
+    if (!table) {
         return;
     }
 
     table.innerHTML = "";
 
-    const thead = document.createElement("thead");
-    const tbody = document.createElement("tbody");
 
-    const headerRow = document.createElement("tr");
+    if (
+        !Array.isArray(rows) ||
+        rows.length === 0
+    ) {
+        return;
+    }
 
-    matrix[0].forEach(value => {
-        const th = document.createElement("th");
-        th.textContent = value ?? "";
+
+    const thead =
+        document.createElement("thead");
+
+    const tbody =
+        document.createElement("tbody");
+
+
+    /* HEADER */
+
+    const headerRow =
+        document.createElement("tr");
+
+
+    rows[0].forEach(value => {
+
+        const th =
+            document.createElement("th");
+
+        th.textContent =
+            value ?? "";
+
         headerRow.appendChild(th);
+
     });
+
 
     thead.appendChild(headerRow);
 
-    for (let i = 1; i < matrix.length; i++) {
-        const row = document.createElement("tr");
 
-        matrix[i].forEach(value => {
-            const td = document.createElement("td");
-            td.textContent = value ?? "";
-            row.appendChild(td);
+
+    /* DATA ROWS */
+
+    for (
+        let i = 1;
+        i < rows.length;
+        i++
+    ) {
+
+        const rowValues =
+            rows[i];
+
+
+        const hasContent =
+            rowValues.some(
+                value =>
+                    String(
+                        value ?? ""
+                    ).trim() !== ""
+            );
+
+
+        if (!hasContent) {
+            continue;
+        }
+
+
+        const tr =
+            document.createElement("tr");
+
+
+        rowValues.forEach(value => {
+
+            const td =
+                document.createElement("td");
+
+            td.textContent =
+                value ?? "";
+
+            tr.appendChild(td);
+
         });
 
-        tbody.appendChild(row);
+
+        tbody.appendChild(tr);
+
     }
 
+
     table.appendChild(thead);
+
     table.appendChild(tbody);
 }
 
 
+
 /* =========================================================
-   FIND A TABLE INSIDE WEB_TABLES DATA
+   FIND A LEAGUE TABLE IN WEB_TABLES
    ========================================================= */
 
-function extractTable(data, title) {
+function findTable(data, searchText) {
+
     if (!Array.isArray(data)) {
         return [];
     }
 
-    const titleLower = title.toLowerCase();
 
-    for (let row = 0; row < data.length; row++) {
-        for (let col = 0; col < data[row].length; col++) {
-            const value = String(data[row][col] ?? "")
-                .trim()
-                .toLowerCase();
+    const wanted =
+        searchText
+            .toLowerCase()
+            .trim();
 
-            if (value === titleLower) {
 
-                let headerRow = row + 1;
+    for (
+        let row = 0;
+        row < data.length;
+        row++
+    ) {
 
-                while (
-                    headerRow < data.length &&
-                    data[headerRow].every(cell => String(cell ?? "").trim() === "")
-                ) {
-                    headerRow++;
+        const currentRow =
+            Array.isArray(data[row])
+                ? data[row]
+                : [];
+
+
+        for (
+            let col = 0;
+            col < currentRow.length;
+            col++
+        ) {
+
+            const cell =
+                String(
+                    currentRow[col] ?? ""
+                )
+                    .toLowerCase()
+                    .trim();
+
+
+            if (!cell.includes(wanted)) {
+                continue;
+            }
+
+
+            /* Find next row containing data */
+
+            let headerRow =
+                row + 1;
+
+
+            while (
+                headerRow < data.length
+            ) {
+
+                const candidate =
+                    Array.isArray(
+                        data[headerRow]
+                    )
+                        ? data[headerRow]
+                        : [];
+
+
+                const hasData =
+                    candidate.some(
+                        value =>
+                            String(
+                                value ?? ""
+                            ).trim() !== ""
+                    );
+
+
+                if (hasData) {
+                    break;
                 }
 
-                if (headerRow >= data.length) {
-                    return [];
+
+                headerRow++;
+
+            }
+
+
+            if (
+                headerRow >=
+                data.length
+            ) {
+                return [];
+            }
+
+
+            const header =
+                data[headerRow];
+
+
+            /* Find first header column */
+
+            let startCol = 0;
+
+
+            while (
+                startCol <
+                    header.length &&
+                String(
+                    header[startCol] ?? ""
+                ).trim() === ""
+            ) {
+
+                startCol++;
+
+            }
+
+
+            if (
+                startCol >=
+                header.length
+            ) {
+                return [];
+            }
+
+
+            /* Find last continuous header column */
+
+            let endCol =
+                startCol;
+
+
+            while (
+                endCol + 1 <
+                    header.length &&
+                String(
+                    header[endCol + 1] ?? ""
+                ).trim() !== ""
+            ) {
+
+                endCol++;
+
+            }
+
+
+            const result = [];
+
+
+            result.push(
+                header.slice(
+                    startCol,
+                    endCol + 1
+                )
+            );
+
+
+            /* Read data underneath */
+
+            for (
+                let r =
+                    headerRow + 1;
+
+                r < data.length;
+
+                r++
+            ) {
+
+                const sourceRow =
+                    Array.isArray(
+                        data[r]
+                    )
+                        ? data[r]
+                        : [];
+
+
+                const rowData =
+                    sourceRow.slice(
+                        startCol,
+                        endCol + 1
+                    );
+
+
+                const empty =
+                    rowData.every(
+                        value =>
+                            String(
+                                value ?? ""
+                            ).trim() === ""
+                    );
+
+
+                if (empty) {
+                    break;
                 }
 
-                let startColumn = col;
-
-                while (
-                    startColumn > 0 &&
-                    String(data[headerRow][startColumn - 1] ?? "").trim() !== ""
-                ) {
-                    startColumn--;
-                }
-
-                let endColumn = col;
-
-                while (
-                    endColumn + 1 < data[headerRow].length &&
-                    String(data[headerRow][endColumn + 1] ?? "").trim() !== ""
-                ) {
-                    endColumn++;
-                }
-
-                const result = [];
 
                 result.push(
-                    data[headerRow].slice(startColumn, endColumn + 1)
+                    rowData
                 );
 
-                for (let r = headerRow + 1; r < data.length; r++) {
-                    const rowValues =
-                        data[r].slice(startColumn, endColumn + 1);
-
-                    const isEmpty =
-                        rowValues.every(
-                            cell => String(cell ?? "").trim() === ""
-                        );
-
-                    if (isEmpty) {
-                        break;
-                    }
-
-                    result.push(rowValues);
-                }
-
-                return result;
             }
+
+
+            return result;
+
         }
     }
 
+
     return [];
 }
+
 
 
 /* =========================================================
@@ -130,456 +326,1046 @@ function extractTable(data, title) {
    ========================================================= */
 
 function groupFixturesByDate(fixtures) {
-    const groups = new Map();
+
+    const groups =
+        new Map();
+
 
     fixtures.forEach(fixture => {
-        const date = fixture.date || "Date TBC";
+
+        const date =
+            String(
+                fixture.date ||
+                "Date TBC"
+            ).trim();
+
 
         if (!groups.has(date)) {
-            groups.set(date, []);
+
+            groups.set(
+                date,
+                []
+            );
+
         }
 
-        groups.get(date).push(fixture);
+
+        groups
+            .get(date)
+            .push(fixture);
+
     });
+
 
     return groups;
 }
 
 
+
 /* =========================================================
-   FIXTURE PAGE
+   WORK OUT FIXTURE SECTION STYLE
+   ========================================================= */
+
+function getFixtureSectionClass(types) {
+
+    const typeText =
+        types
+            .join(" ")
+            .toLowerCase();
+
+
+    /*
+     * MEETING
+     */
+
+    if (
+        typeText.includes(
+            "meeting"
+        )
+    ) {
+        return "meeting-fixture";
+    }
+
+
+    /*
+     * FINALS NIGHT
+     */
+
+    if (
+        typeText.includes(
+            "finals night"
+        )
+    ) {
+        return "finals-fixture";
+    }
+
+
+    /*
+     * DARTS CUP EVENTS
+     *
+     * Includes:
+     * Darts Cup
+     * Darts Cup Semi
+     * Darts Cup Final
+     * Darts Pairs
+     * Darts Individuals
+     */
+
+    if (
+        typeText.includes("darts") &&
+        (
+            typeText.includes("cup") ||
+            typeText.includes("pairs") ||
+            typeText.includes("individual")
+        )
+    ) {
+        return "darts-cup-fixture";
+    }
+
+
+    /*
+     * CRIB CUP EVENTS
+     *
+     * Includes:
+     * Crib Cup
+     * Crib Cup Semi
+     * Crib Cup Final
+     * Crib Pairs
+     * Crib Individuals
+     */
+
+    if (
+        typeText.includes("crib") &&
+        (
+            typeText.includes("cup") ||
+            typeText.includes("pairs") ||
+            typeText.includes("individual")
+        )
+    ) {
+        return "crib-cup-fixture";
+    }
+
+
+    /*
+     * GENERAL CUP ROUND
+     *
+     * Example:
+     * Cup 1st Round
+     *
+     * This uses the general Cup colour.
+     */
+
+    if (
+        typeText.includes("cup")
+    ) {
+        return "general-cup-fixture";
+    }
+
+
+    /*
+     * ORDINARY LEAGUE
+     */
+
+    return "league-fixture";
+}
+
+
+
+/* =========================================================
+   SHOULD AN EMPTY EVENT SAY FIXTURES TO BE DRAWN?
+   ========================================================= */
+
+function shouldShowDrawPlaceholder(
+    typeLower
+) {
+
+    return (
+
+        typeLower.includes("cup") ||
+
+        typeLower.includes("pairs") ||
+
+        typeLower.includes(
+            "individual"
+        ) ||
+
+        typeLower.includes(
+            "finals night"
+        )
+
+    );
+}
+
+
+
+/* =========================================================
+   RENDER FIXTURES
    ========================================================= */
 
 function renderFixtures(fixtures) {
-    const container = document.getElementById("fixtures");
+
+    const container =
+        document.getElementById(
+            "fixtures"
+        );
+
 
     if (!container) {
         return;
     }
 
+
     container.innerHTML = "";
 
-    if (!Array.isArray(fixtures) || fixtures.length === 0) {
+
+    if (
+        !Array.isArray(fixtures) ||
+        fixtures.length === 0
+    ) {
+
         container.innerHTML =
-            '<div class="panel">No fixtures available.</div>';
+            `
+            <section class="fixture-week">
+                No fixtures available.
+            </section>
+            `;
+
         return;
     }
 
-    const groups = groupFixturesByDate(fixtures);
 
-
-    groups.forEach((matches, date) => {
-
-        /* =================================================
-           CREATE DATE CARD
-           ================================================= */
-
-        const section = document.createElement("section");
-        section.className = "fixture-week";
-
-
-        /* =================================================
-           DATE + TYPE HEADER
-           ================================================= */
-
-        const heading = document.createElement("div");
-        heading.className = "fixture-week-heading";
-
-        const dateTitle = document.createElement("h2");
-        dateTitle.textContent = date;
-
-        heading.appendChild(dateTitle);
-
-
-        const types = [
-            ...new Set(
-                matches
-                    .map(match => match.type)
-                    .filter(type => type && type.trim() !== "")
-            )
-        ];
-
-
-        if (types.length > 0) {
-            const typeLabel = document.createElement("div");
-            typeLabel.className = "fixture-type";
-            typeLabel.textContent = types.join(" / ");
-
-            heading.appendChild(typeLabel);
-        }
-
-
-        section.appendChild(heading);
-
-
-        /* =================================================
-           CHECK IF THIS DATE IS A MEETING
-           ================================================= */
-
-        const isMeeting = types.some(type =>
-            type.trim().toLowerCase() === "meeting"
+    const groups =
+        groupFixturesByDate(
+            fixtures
         );
 
 
-        /* =================================================
-           MEETING
-           ================================================= */
 
-        if (isMeeting) {
-
-            const meetingRow = document.createElement("div");
-            meetingRow.className = "fixture-row meeting-row";
+    groups.forEach(
+        (matches, date) => {
 
 
-            let meetingLocation = "";
+            /* =============================================
+               FIND ALL TYPES FOR THIS DATE
+               ============================================= */
 
-            matches.forEach(match => {
+            const types = [
 
-                const home =
-                    String(match.homeTeam || "").trim();
+                ...new Set(
 
-                const away =
-                    String(match.awayTeam || "").trim();
+                    matches
 
+                        .map(match =>
+                            String(
+                                match.type ||
+                                ""
+                            ).trim()
+                        )
 
-                if (
-                    !meetingLocation &&
-                    home &&
-                    home.toUpperCase() !== "BYE"
-                ) {
-                    meetingLocation = home;
-                }
+                        .filter(Boolean)
 
+                )
 
-                if (
-                    !meetingLocation &&
-                    away &&
-                    away.toUpperCase() !== "BYE"
-                ) {
-                    meetingLocation = away;
-                }
-
-            });
+            ];
 
 
-            const locationText = document.createElement("div");
-            locationText.className = "meeting-location";
 
-            locationText.textContent =
-                meetingLocation || "Meeting location TBC";
+            /* =============================================
+               CREATE DATE SECTION
+               ============================================= */
 
-
-            meetingRow.appendChild(locationText);
-
-            section.appendChild(meetingRow);
-
-            container.appendChild(section);
-
-            return;
-        }
+            const section =
+                document.createElement(
+                    "section"
+                );
 
 
-        /* =================================================
-           NORMAL FIXTURE LIST
-           ================================================= */
-
-        const list = document.createElement("div");
-        list.className = "fixture-list";
+            section.className =
+                "fixture-week";
 
 
-        matches.forEach(match => {
-
-            const home =
-                String(match.homeTeam || "").trim();
-
-            const away =
-                String(match.awayTeam || "").trim();
-
-            const type =
-                String(match.type || "").trim();
-
-            const typeLower =
-                type.toLowerCase();
+            const colourClass =
+                getFixtureSectionClass(
+                    types
+                );
 
 
-         /* =================================================
-   EMPTY CUP DATE
-   Only show an empty fixture row for Cup rounds.
-   Ignore empty League rows.
-   ================================================= */
-
-if (!home && !away) {
-
-    if (typeLower.includes("cup")) {
-
-        const row = document.createElement("div");
-        row.className = "fixture-row empty-fixture";
-
-        const text = document.createElement("div");
-        text.className = "empty-fixture-text";
-
-        text.textContent = "Fixtures to be drawn";
-
-        row.appendChild(text);
-        list.appendChild(row);
-    }
-
-    return;
-}
+            section.classList.add(
+                colourClass
+            );
 
 
-            /* =================================================
-               CREATE FIXTURE ROW
-               ================================================= */
 
-            const row = document.createElement("div");
-            row.className = "fixture-row";
+            /* =============================================
+               DATE / TYPE HEADING
+               ============================================= */
+
+            const heading =
+                document.createElement(
+                    "div"
+                );
 
 
-            if (match.played) {
-                row.classList.add("played");
+            heading.className =
+                "fixture-week-heading";
+
+
+            const dateTitle =
+                document.createElement(
+                    "h2"
+                );
+
+
+            dateTitle.textContent =
+                date;
+
+
+            heading.appendChild(
+                dateTitle
+            );
+
+
+
+            if (
+                types.length > 0
+            ) {
+
+                const typeLabel =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                typeLabel.className =
+                    "fixture-type";
+
+
+                typeLabel.textContent =
+                    types.join(" / ");
+
+
+                heading.appendChild(
+                    typeLabel
+                );
+
             }
 
 
-            /* =================================================
-               BYE
-               ================================================= */
-
-            if (match.bye) {
-
-                row.classList.add("bye");
+            section.appendChild(
+                heading
+            );
 
 
-                let byeTeam = home;
 
-                if (!byeTeam || byeTeam.toUpperCase() === "BYE") {
-                    byeTeam = away;
-                }
+            /* =============================================
+               MEETING
+               ============================================= */
 
-
-                const team = document.createElement("div");
-                team.className = "bye-team";
-                team.textContent = byeTeam;
-
-
-                const byeText = document.createElement("div");
-                byeText.className = "bye-label";
-                byeText.textContent = "BYE";
-
-
-                row.appendChild(team);
-                row.appendChild(byeText);
+            const isMeeting =
+                types.some(
+                    type =>
+                        type
+                            .toLowerCase()
+                            .includes(
+                                "meeting"
+                            )
+                );
 
 
-                list.appendChild(row);
+            if (isMeeting) {
+
+
+                let meetingLocation =
+                    "";
+
+
+                matches.forEach(
+                    match => {
+
+
+                        const home =
+                            String(
+                                match.homeTeam ||
+                                ""
+                            ).trim();
+
+
+                        const away =
+                            String(
+                                match.awayTeam ||
+                                ""
+                            ).trim();
+
+
+
+                        if (
+                            !meetingLocation &&
+                            home &&
+                            home.toUpperCase()
+                                !== "BYE"
+                        ) {
+
+                            meetingLocation =
+                                home;
+
+                        }
+
+
+
+                        if (
+                            !meetingLocation &&
+                            away &&
+                            away.toUpperCase()
+                                !== "BYE"
+                        ) {
+
+                            meetingLocation =
+                                away;
+
+                        }
+
+                    }
+                );
+
+
+
+                const meetingRow =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                meetingRow.className =
+                    "fixture-row meeting-row";
+
+
+                const location =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                location.className =
+                    "meeting-location";
+
+
+                location.textContent =
+                    meetingLocation ||
+                    "Meeting location TBC";
+
+
+                meetingRow.appendChild(
+                    location
+                );
+
+
+                section.appendChild(
+                    meetingRow
+                );
+
+
+                container.appendChild(
+                    section
+                );
+
 
                 return;
+
             }
 
 
-            /* =================================================
-               NORMAL MATCH
-               ================================================= */
 
-            const homeTeam = document.createElement("div");
-            homeTeam.className =
-                "fixture-team home-team";
+            /* =============================================
+               FIXTURE LIST
+               ============================================= */
 
-            homeTeam.textContent = home;
-
-
-            const versus = document.createElement("div");
-            versus.className = "fixture-v";
-            versus.textContent = "v";
+            const list =
+                document.createElement(
+                    "div"
+                );
 
 
-            const awayTeam = document.createElement("div");
-            awayTeam.className =
-                "fixture-team away-team";
-
-            awayTeam.textContent = away;
+            list.className =
+                "fixture-list";
 
 
-            row.appendChild(homeTeam);
-            row.appendChild(versus);
-            row.appendChild(awayTeam);
+
+            /*
+             * Makes sure an undrawn Cup/event
+             * only says:
+             *
+             * Fixtures to be drawn
+             *
+             * ONCE per date.
+             */
+
+            let placeholderShown =
+                false;
 
 
-            list.appendChild(row);
 
-        });
+            matches.forEach(
+                match => {
 
 
-        section.appendChild(list);
+                    const home =
+                        String(
+                            match.homeTeam ||
+                            ""
+                        ).trim();
 
-        container.appendChild(section);
 
-    });
+                    const away =
+                        String(
+                            match.awayTeam ||
+                            ""
+                        ).trim();
+
+
+                    const type =
+                        String(
+                            match.type ||
+                            ""
+                        ).trim();
+
+
+                    const typeLower =
+                        type.toLowerCase();
+
+
+
+                    /* =====================================
+                       EMPTY EVENT
+                       ===================================== */
+
+                    if (
+                        !home &&
+                        !away
+                    ) {
+
+
+                        if (
+
+                            shouldShowDrawPlaceholder(
+                                typeLower
+                            )
+
+                            &&
+
+                            !placeholderShown
+
+                        ) {
+
+
+                            const row =
+                                document.createElement(
+                                    "div"
+                                );
+
+
+                            row.className =
+                                "fixture-row empty-fixture";
+
+
+                            const text =
+                                document.createElement(
+                                    "div"
+                                );
+
+
+                            text.className =
+                                "empty-fixture-text";
+
+
+                            text.textContent =
+                                "Fixtures to be drawn";
+
+
+                            row.appendChild(
+                                text
+                            );
+
+
+                            list.appendChild(
+                                row
+                            );
+
+
+                            placeholderShown =
+                                true;
+
+                        }
+
+
+                        /*
+                         * Ignore completely empty
+                         * ordinary League rows.
+                         */
+
+                        return;
+
+                    }
+
+
+
+                    /* =====================================
+                       CREATE FIXTURE ROW
+                       ===================================== */
+
+                    const row =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    row.className =
+                        "fixture-row";
+
+
+
+                    /* PLAYED */
+
+                    if (
+                        match.played
+                    ) {
+
+                        row.classList.add(
+                            "played"
+                        );
+
+                    }
+
+
+
+                    /* =====================================
+                       BYE
+                       ===================================== */
+
+                    if (
+                        match.bye
+                    ) {
+
+
+                        row.classList.add(
+                            "bye"
+                        );
+
+
+                        let byeTeam =
+                            home;
+
+
+                        if (
+
+                            !byeTeam
+
+                            ||
+
+                            byeTeam
+                                .toUpperCase()
+                                === "BYE"
+
+                        ) {
+
+                            byeTeam =
+                                away;
+
+                        }
+
+
+
+                        const team =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        team.className =
+                            "bye-team";
+
+
+                        team.textContent =
+                            byeTeam;
+
+
+
+                        const byeText =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        byeText.className =
+                            "bye-label";
+
+
+                        byeText.textContent =
+                            "BYE";
+
+
+
+                        row.appendChild(
+                            team
+                        );
+
+
+                        row.appendChild(
+                            byeText
+                        );
+
+
+                        list.appendChild(
+                            row
+                        );
+
+
+                        return;
+
+                    }
+
+
+
+                    /* =====================================
+                       NORMAL HOME v AWAY
+                       ===================================== */
+
+                    const homeTeam =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    homeTeam.className =
+                        "fixture-team home-team";
+
+
+                    homeTeam.textContent =
+                        home;
+
+
+
+                    const versus =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    versus.className =
+                        "fixture-v";
+
+
+                    versus.textContent =
+                        "v";
+
+
+
+                    const awayTeam =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    awayTeam.className =
+                        "fixture-team away-team";
+
+
+                    awayTeam.textContent =
+                        away;
+
+
+
+                    row.appendChild(
+                        homeTeam
+                    );
+
+
+                    row.appendChild(
+                        versus
+                    );
+
+
+                    row.appendChild(
+                        awayTeam
+                    );
+
+
+                    list.appendChild(
+                        row
+                    );
+
+                }
+            );
+
+
+
+            if (
+                list.children.length > 0
+            ) {
+
+                section.appendChild(
+                    list
+                );
+
+            }
+
+
+            container.appendChild(
+                section
+            );
+
+        }
+    );
+
 }
+
 
 
 /* =========================================================
-   UPDATED TIME
+   LAST UPDATED TEXT
    ========================================================= */
 
-function renderUpdatedTime(updated) {
-    const element = document.getElementById("updated");
+function updateStatus(updated) {
 
-    if (!element || !updated) {
+    const element =
+        document.getElementById(
+            "updated"
+        );
+
+
+    if (!element) {
         return;
     }
 
-    const date = new Date(updated);
 
-    if (Number.isNaN(date.getTime())) {
+    if (!updated) {
+
+        element.textContent =
+            "League information loaded";
+
         return;
     }
 
-    const formatted =
-        date.toLocaleString("en-GB", {
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric",
-            hour: "2-digit",
-            minute: "2-digit"
-        });
+
+    const date =
+        new Date(updated);
+
+
+    if (
+        Number.isNaN(
+            date.getTime()
+        )
+    ) {
+
+        element.textContent =
+            "League information loaded";
+
+        return;
+    }
 
 
     element.textContent =
-        `Last updated: ${formatted}`;
-}
 
+        "Last updated: " +
 
-/* =========================================================
-   LOAD DATA
-   ========================================================= */
-
-async function loadSiteData() {
-    try {
-
-        const response = await fetch(
-            `${DATA_URL}?t=${Date.now()}`,
+        date.toLocaleString(
+            "en-GB",
             {
-                cache: "no-store"
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit"
             }
         );
 
+}
+
+
+
+/* =========================================================
+   LOAD TABLES.JSON
+   ========================================================= */
+
+async function loadSiteData() {
+
+    try {
+
+
+        const response =
+            await fetch(
+
+                `${DATA_URL}?t=${Date.now()}`,
+
+                {
+                    cache: "no-store"
+                }
+
+            );
+
+
 
         if (!response.ok) {
+
             throw new Error(
-                `Could not load tables.json: ${response.status}`
+
+                `Unable to load tables.json (${response.status})`
+
             );
+
         }
 
 
-        const json = await response.json();
+
+        const json =
+            await response.json();
 
 
-        /* =================================================
-           UPDATED TIME
-           ================================================= */
 
-        renderUpdatedTime(json.updated);
-
-
-        /* =================================================
+        /* =============================================
            TABLES PAGE
-           ================================================= */
+           ============================================= */
 
-        if (Array.isArray(json.data)) {
+        if (
+            Array.isArray(
+                json.data
+            )
+        ) {
+
 
             const darts =
-                extractTable(
+                findTable(
                     json.data,
                     "Darts League"
                 );
 
 
             const crib =
-                extractTable(
+                findTable(
                     json.data,
                     "Crib League"
                 );
 
 
             const gallon =
-                extractTable(
+                findTable(
                     json.data,
                     "Gallon League"
                 );
 
 
-            if (document.getElementById("dartsTable")) {
-                renderTable(
-                    "dartsTable",
-                    darts
-                );
-            }
+
+            renderTable(
+                "dartsTable",
+                darts
+            );
 
 
-            if (document.getElementById("cribTable")) {
-                renderTable(
-                    "cribTable",
-                    crib
-                );
-            }
+            renderTable(
+                "cribTable",
+                crib
+            );
 
 
-            if (document.getElementById("gallonTable")) {
-                renderTable(
-                    "gallonTable",
-                    gallon
-                );
-            }
-
-        }
-
-
-        /* =================================================
-           FIXTURE PAGE
-           ================================================= */
-
-        if (document.getElementById("fixtures")) {
-
-            renderFixtures(
-                Array.isArray(json.fixtures)
-                    ? json.fixtures
-                    : []
+            renderTable(
+                "gallonTable",
+                gallon
             );
 
         }
 
-    } catch (error) {
 
-        console.error(error);
+
+        /* =============================================
+           FIXTURES PAGE
+           ============================================= */
+
+        if (
+            document.getElementById(
+                "fixtures"
+            )
+        ) {
+
+
+            renderFixtures(
+
+                Array.isArray(
+                    json.fixtures
+                )
+
+                    ? json.fixtures
+
+                    : []
+
+            );
+
+        }
+
+
+
+        updateStatus(
+            json.updated
+        );
+
+
+    }
+
+    catch (error) {
+
+
+        console.error(
+            error
+        );
+
+
+        const status =
+            document.getElementById(
+                "updated"
+            );
+
+
+        if (status) {
+
+            status.textContent =
+                "Unable to load latest league information";
+
+        }
 
 
         const fixtures =
-            document.getElementById("fixtures");
+            document.getElementById(
+                "fixtures"
+            );
+
 
         if (fixtures) {
+
             fixtures.innerHTML =
-                '<div class="panel">Unable to load fixtures at the moment.</div>';
-        }
+                `
+                <section class="fixture-week">
+                    Unable to load fixtures at the moment.
+                </section>
+                `;
 
-
-        const updated =
-            document.getElementById("updated");
-
-        if (updated) {
-            updated.textContent =
-                "Unable to load latest data";
         }
 
     }
+
 }
 
 
+
 /* =========================================================
-   INITIAL LOAD
+   FIRST LOAD
    ========================================================= */
 
-loadSiteData();
+document.addEventListener(
+
+    "DOMContentLoaded",
+
+    loadSiteData
+
+);
+
 
 
 /* =========================================================
@@ -587,6 +1373,9 @@ loadSiteData();
    ========================================================= */
 
 setInterval(
+
     loadSiteData,
+
     60000
+
 );
