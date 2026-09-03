@@ -587,7 +587,7 @@
       "type": "League"
     },
     {
-      "awayTeam": "Railway Hollingwood",
+      "awayTeam": "Railway Hollinwood",
       "bye": false,
       "date": "20/10/26",
       "homeTeam": "Horseshoe",
@@ -614,7 +614,7 @@
       "awayTeam": "Houghton Arms",
       "bye": false,
       "date": "27/10/26",
-      "homeTeam": "Railway Hollingwood",
+      "homeTeam": "Railway Hollinwood",
       "played": false,
       "type": "League"
     },
@@ -670,12 +670,12 @@
       "awayTeam": "BYE",
       "bye": true,
       "date": "03/11/26",
-      "homeTeam": "Railway Hollingwood",
+      "homeTeam": "Railway Hollinwood",
       "played": false,
       "type": ""
     },
     {
-      "awayTeam": "Railway Hollingwood",
+      "awayTeam": "Railway Hollinwood",
       "bye": false,
       "date": "10/11/26",
       "homeTeam": "Falconers",
@@ -726,7 +726,7 @@
       "awayTeam": "N.H. Nomads",
       "bye": false,
       "date": "24/11/26",
-      "homeTeam": "Railway Hollingwood",
+      "homeTeam": "Railway Hollinwood",
       "played": false,
       "type": ""
     },
@@ -774,7 +774,7 @@
       "awayTeam": "Gardeners Arms",
       "bye": false,
       "date": "01/12/26",
-      "homeTeam": "Railway Hollingwood",
+      "homeTeam": "Railway Hollinwood",
       "played": false,
       "type": ""
     },
@@ -819,7 +819,7 @@
       "type": ""
     },
     {
-      "awayTeam": "Railway Hollingwood",
+      "awayTeam": "Railway Hollinwood",
       "bye": false,
       "date": "05/01/27",
       "homeTeam": "Willow Tavern",
@@ -846,7 +846,7 @@
       "awayTeam": "Horseshoe",
       "bye": false,
       "date": "12/01/27",
-      "homeTeam": "Railway Hollingwood",
+      "homeTeam": "Railway Hollinwood",
       "played": false,
       "type": ""
     },
@@ -891,7 +891,7 @@
       "type": "Meeting"
     },
     {
-      "awayTeam": "Railway Hollingwood",
+      "awayTeam": "Railway Hollinwood",
       "bye": false,
       "date": "02/02/27",
       "homeTeam": "Houghton Arms",
@@ -950,7 +950,7 @@
       "awayTeam": "BYE",
       "bye": true,
       "date": "09/02/27",
-      "homeTeam": "Railway Hollingwood",
+      "homeTeam": "Railway Hollinwood",
       "played": false,
       "type": ""
     },
@@ -958,7 +958,7 @@
       "awayTeam": "Houghton Arms",
       "bye": false,
       "date": "16/02/27",
-      "homeTeam": "Railway Hollingwood",
+      "homeTeam": "Railway Hollinwood",
       "played": false,
       "type": "League"
     },
@@ -995,7 +995,7 @@
       "type": "League"
     },
     {
-      "awayTeam": "Railway Hollingwood",
+      "awayTeam": "Railway Hollinwood",
       "bye": false,
       "date": "23/02/27",
       "homeTeam": "Horseshoe",
@@ -1035,7 +1035,7 @@
       "type": ""
     },
     {
-      "awayTeam": "Railway Hollingwood",
+      "awayTeam": "Railway Hollinwood",
       "bye": false,
       "date": "02/03/27",
       "homeTeam": "Falconers",
@@ -1070,7 +1070,7 @@
       "awayTeam": "Willow Tavern",
       "bye": false,
       "date": "09/03/27",
-      "homeTeam": "Railway Hollingwood",
+      "homeTeam": "Railway Hollinwood",
       "played": false,
       "type": ""
     },
@@ -1091,7 +1091,7 @@
       "type": "League"
     },
     {
-      "awayTeam": "Railway Hollingwood",
+      "awayTeam": "Railway Hollinwood",
       "bye": false,
       "date": "16/03/27",
       "homeTeam": "Gardeners Arms",
@@ -1118,7 +1118,7 @@
       "awayTeam": "N.H. Nomads",
       "bye": false,
       "date": "23/03/27",
-      "homeTeam": "Railway Hollingwood",
+      "homeTeam": "Railway Hollinwood",
       "played": false,
       "type": "League"
     },
@@ -1195,5 +1195,5 @@
       "type": "Finals Night"
     }
   ],
-  "updated": "2026-09-03T12:10:05.787Z"
+  "updated": "2026-09-03T12:15:08.151Z"
 }
