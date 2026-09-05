@@ -74,7 +74,7 @@
     ],
     [
       2,
-      "Haughton Arms",
+      "Houghton Arms",
       0,
       0,
       0,
@@ -242,7 +242,7 @@
     ],
     [
       5,
-      "Haughton Arms",
+      "Houghton Arms",
       0,
       0,
       0,
@@ -374,7 +374,7 @@
     ],
     [
       5,
-      "Haughton Arms",
+      "Houghton Arms",
       0,
       0,
       0,
@@ -419,7 +419,7 @@
       "type": "League"
     },
     {
-      "awayTeam": "Haughton Arms",
+      "awayTeam": "Houghton Arms",
       "bye": false,
       "date": "15/09/26",
       "homeTeam": "Falconers",
@@ -462,7 +462,7 @@
       "awayTeam": "N.H. Nomads",
       "bye": false,
       "date": "22/09/26",
-      "homeTeam": "Haughton Arms",
+      "homeTeam": "Houghton Arms",
       "played": false,
       "type": ""
     },
@@ -491,7 +491,7 @@
       "type": ""
     },
     {
-      "awayTeam": "Haughton Arms",
+      "awayTeam": "Houghton Arms",
       "bye": false,
       "date": "29/09/26",
       "homeTeam": "Gardeners Arms",
@@ -523,7 +523,7 @@
       "type": "League"
     },
     {
-      "awayTeam": "Haughton Arms",
+      "awayTeam": "Houghton Arms",
       "bye": false,
       "date": "06/10/26",
       "homeTeam": "Willow Tavern",
@@ -550,7 +550,7 @@
       "awayTeam": "Horseshoe",
       "bye": false,
       "date": "13/10/26",
-      "homeTeam": "Haughton Arms",
+      "homeTeam": "Houghton Arms",
       "played": false,
       "type": "League"
     },
@@ -606,12 +606,12 @@
       "awayTeam": "BYE",
       "bye": true,
       "date": "20/10/26",
-      "homeTeam": "Haughton Arms",
+      "homeTeam": "Houghton Arms",
       "played": false,
       "type": ""
     },
     {
-      "awayTeam": "Haughton Arms",
+      "awayTeam": "Houghton Arms",
       "bye": false,
       "date": "27/10/26",
       "homeTeam": "Railway Hollinwood",
@@ -654,7 +654,7 @@
       "awayTeam": "Falconers",
       "bye": false,
       "date": "03/11/26",
-      "homeTeam": "Haughton Arms",
+      "homeTeam": "Houghton Arms",
       "played": false,
       "type": ""
     },
@@ -691,7 +691,7 @@
       "type": ""
     },
     {
-      "awayTeam": "Haughton Arms",
+      "awayTeam": "Houghton Arms",
       "bye": false,
       "date": "10/11/26",
       "homeTeam": "N.H. Nomads",
@@ -734,7 +734,7 @@
       "awayTeam": "Gardeners Arms",
       "bye": false,
       "date": "24/11/26",
-      "homeTeam": "Haughton Arms",
+      "homeTeam": "Houghton Arms",
       "played": false,
       "type": ""
     },
@@ -766,7 +766,7 @@
       "awayTeam": "Willow Tavern",
       "bye": false,
       "date": "01/12/26",
-      "homeTeam": "Haughton Arms",
+      "homeTeam": "Houghton Arms",
       "played": false,
       "type": ""
     },
@@ -803,7 +803,7 @@
       "type": "Crib Cup Semi"
     },
     {
-      "awayTeam": "Haughton Arms",
+      "awayTeam": "Houghton Arms",
       "bye": false,
       "date": "05/01/27",
       "homeTeam": "Horseshoe",
@@ -862,7 +862,7 @@
       "awayTeam": "BYE",
       "bye": true,
       "date": "12/01/27",
-      "homeTeam": "Haughton Arms",
+      "homeTeam": "Houghton Arms",
       "played": false,
       "type": ""
     },
@@ -894,7 +894,7 @@
       "awayTeam": "Railway Hollinwood",
       "bye": false,
       "date": "02/02/27",
-      "homeTeam": "Haughton Arms",
+      "homeTeam": "Houghton Arms",
       "played": false,
       "type": "League"
     },
@@ -934,7 +934,7 @@
       "awayTeam": "N.H. Nomads",
       "bye": false,
       "date": "09/02/27",
-      "homeTeam": "Haughton Arms",
+      "homeTeam": "Houghton Arms",
       "played": false,
       "type": ""
     },
@@ -955,7 +955,7 @@
       "type": ""
     },
     {
-      "awayTeam": "Haughton Arms",
+      "awayTeam": "Horseshoe",
       "bye": false,
       "date": "16/02/27",
       "homeTeam": "Railway Hollinwood",
@@ -1014,12 +1014,12 @@
       "awayTeam": "BYE",
       "bye": true,
       "date": "23/02/27",
-      "homeTeam": "Haughton Arms",
+      "homeTeam": "Houghton Arms",
       "played": false,
       "type": ""
     },
     {
-      "awayTeam": "Haughton Arms",
+      "awayTeam": "Horseshoe",
       "bye": false,
       "date": "02/03/27",
       "homeTeam": "Horseshoe",
@@ -1062,7 +1062,7 @@
       "awayTeam": "Falconers",
       "bye": false,
       "date": "09/03/27",
-      "homeTeam": "Haughton Arms",
+      "homeTeam": "Houghton Arms",
       "played": false,
       "type": ""
     },
@@ -1099,7 +1099,7 @@
       "type": ""
     },
     {
-      "awayTeam": "Haughton Arms",
+      "awayTeam": "Houghton Arms",
       "bye": false,
       "date": "16/03/27",
       "homeTeam": "Willow Tavern",
@@ -1134,7 +1134,7 @@
       "awayTeam": "Gardeners Arms",
       "bye": false,
       "date": "23/03/27",
-      "homeTeam": "Haughton Arms",
+      "homeTeam": "Houghton Arms",
       "played": false,
       "type": ""
     },
@@ -1195,5 +1195,5 @@
       "type": "Finals Night"
     }
   ],
-  "updated": "2026-09-05T12:15:05.059Z"
+  "updated": "2026-09-05T12:20:04.522Z"
 }
