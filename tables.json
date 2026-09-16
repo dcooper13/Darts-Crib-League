@@ -79,9 +79,9 @@
       1,
       0,
       0,
-      0,
-      0,
-      0,
+      6,
+      1,
+      5,
       2
     ],
     [
@@ -91,14 +91,14 @@
       1,
       0,
       0,
-      0,
-      0,
-      0,
+      5,
+      2,
+      3,
       2
     ],
     [
       4,
-      "Falconers",
+      "Railway Hollinwood",
       0,
       0,
       0,
@@ -110,26 +110,26 @@
     ],
     [
       5,
-      "N.H. Nomads",
+      "Falconers",
+      1,
       0,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
+      1,
+      2,
+      5,
+      -3,
       0
     ],
     [
       6,
-      "Railway Hollinwood",
+      "N.H. Nomads",
+      1,
       0,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
+      1,
+      1,
+      6,
+      -5,
       0
     ],
     [
@@ -210,9 +210,9 @@
       1,
       1,
       0,
-      0,
-      0,
-      0,
+      5,
+      2,
+      3,
       2,
       ""
     ],
@@ -222,15 +222,15 @@
       1,
       1,
       0,
-      0,
-      0,
-      0,
+      4,
+      3,
+      1,
       2,
       ""
     ],
     [
       4,
-      "N.H. Nomads",
+      "Railway Hollinwood",
       0,
       0,
       0,
@@ -243,24 +243,24 @@
     [
       5,
       "Falconers",
+      1,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
+      1,
+      3,
+      4,
+      -1,
       0,
       ""
     ],
     [
       6,
-      "Railway Hollinwood",
+      "N.H. Nomads",
+      1,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
+      1,
+      2,
+      5,
+      -3,
       0,
       ""
     ],
@@ -362,6 +362,18 @@
     ],
     [
       4,
+      "N.H. Nomads",
+      0,
+      1,
+      0,
+      1,
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      5,
       "Railway Hollinwood",
       0,
       0,
@@ -373,20 +385,8 @@
       ""
     ],
     [
-      5,
-      "Falconers",
-      0,
-      0,
-      0,
-      0,
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
       6,
-      "N.H. Nomads",
+      "Falconers",
       0,
       0,
       0,
@@ -424,7 +424,7 @@
       "date": "15/09/26",
       "homeTeam": "Falconers",
       "played": true,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "Horseshoe",
@@ -432,7 +432,7 @@
       "date": "15/09/26",
       "homeTeam": "N.H. Nomads",
       "played": true,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "BYE",
@@ -440,7 +440,7 @@
       "date": "15/09/26",
       "homeTeam": "Railway Hollinwood",
       "played": false,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "Falconers",
@@ -456,7 +456,7 @@
       "date": "22/09/26",
       "homeTeam": "Horseshoe",
       "played": false,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "N.H. Nomads",
@@ -464,7 +464,7 @@
       "date": "22/09/26",
       "homeTeam": "Houghton Arms",
       "played": false,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "BYE",
@@ -472,7 +472,7 @@
       "date": "22/09/26",
       "homeTeam": "Willow Tavern",
       "played": false,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "Horseshoe",
@@ -488,7 +488,7 @@
       "date": "29/09/26",
       "homeTeam": "N.H. Nomads",
       "played": false,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "Houghton Arms",
@@ -496,7 +496,7 @@
       "date": "29/09/26",
       "homeTeam": "Gardeners Arms",
       "played": false,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "BYE",
@@ -504,7 +504,7 @@
       "date": "29/09/26",
       "homeTeam": "Falconers",
       "played": false,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "BYE",
@@ -528,7 +528,7 @@
       "date": "06/10/26",
       "homeTeam": "Willow Tavern",
       "played": false,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "Railway Hollinwood",
@@ -536,7 +536,7 @@
       "date": "06/10/26",
       "homeTeam": "Gardeners Arms",
       "played": false,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "BYE",
@@ -544,7 +544,7 @@
       "date": "06/10/26",
       "homeTeam": "Horseshoe",
       "played": false,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "Horseshoe",
@@ -560,7 +560,7 @@
       "date": "13/10/26",
       "homeTeam": "Falconers",
       "played": false,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "Willow Tavern",
@@ -568,7 +568,7 @@
       "date": "13/10/26",
       "homeTeam": "Railway Hollinwood",
       "played": false,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "BYE",
@@ -576,7 +576,7 @@
       "date": "13/10/26",
       "homeTeam": "N.H. Nomads",
       "played": false,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "N.H. Nomads",
@@ -592,7 +592,7 @@
       "date": "20/10/26",
       "homeTeam": "Horseshoe",
       "played": false,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "Falconers",
@@ -600,7 +600,7 @@
       "date": "20/10/26",
       "homeTeam": "Willow Tavern",
       "played": false,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "BYE",
@@ -608,7 +608,7 @@
       "date": "20/10/26",
       "homeTeam": "Houghton Arms",
       "played": false,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "Houghton Arms",
@@ -624,7 +624,7 @@
       "date": "27/10/26",
       "homeTeam": "N.H. Nomads",
       "played": false,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "Horseshoe",
@@ -632,7 +632,7 @@
       "date": "27/10/26",
       "homeTeam": "Falconers",
       "played": false,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "BYE",
@@ -640,7 +640,7 @@
       "date": "27/10/26",
       "homeTeam": "Gardeners Arms",
       "played": false,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "Gardeners Arms",
@@ -656,7 +656,7 @@
       "date": "03/11/26",
       "homeTeam": "Houghton Arms",
       "played": false,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "N.H. Nomads",
@@ -664,7 +664,7 @@
       "date": "03/11/26",
       "homeTeam": "Horseshoe",
       "played": false,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "BYE",
@@ -672,7 +672,7 @@
       "date": "03/11/26",
       "homeTeam": "Railway Hollinwood",
       "played": false,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "Railway Hollinwood",
@@ -688,7 +688,7 @@
       "date": "10/11/26",
       "homeTeam": "Gardeners Arms",
       "played": false,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "Houghton Arms",
@@ -696,7 +696,7 @@
       "date": "10/11/26",
       "homeTeam": "N.H. Nomads",
       "played": false,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "BYE",
@@ -704,7 +704,7 @@
       "date": "10/11/26",
       "homeTeam": "Willow Tavern",
       "played": false,
-      "type": ""
+      "type": "League"
     },
     {
       "awayTeam": "",
@@ -1195,5 +1195,5 @@
       "type": "Finals Night"
     }
   ],
-  "updated": "2026-09-16T09:55:05.874Z"
+  "updated": "2026-09-16T10:00:14.828Z"
 }
