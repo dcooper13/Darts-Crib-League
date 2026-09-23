@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Failsworth Darts & Crib League Tables
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="styles.css"
+    >
+</head>
+
+
+<body class="tables-page">
+
+    <header class="site-header">
+
+        <p class="eyebrow">
+            LIVE STANDINGS
+        </p>
+
+        <h1>
+            Darts & Crib League Tables
+        </h1>
+
+        <nav class="top-nav">
+            <a
+                href="index.html"
+                class="fixtures-button"
+            >
+                Fixtures
+            </a>
+
+            <a
+                href="tables.html"
+                class="tables-button active"
+            >
+                Tables
+            </a>
+        </nav>
+
+        <p
+            id="updated"
+            class="updated"
+        >
+            Loading league tables...
+        </p>
+
+    </header>
+
+
+    <main class="page-wrap">
+
+
+        <!-- DARTS TABLE -->
+
+        <section class="panel darts-table-panel">
+
+            <h2>
+                Darts League
+            </h2>
+
+            <div class="table-wrap">
+
+                <table id="dartsTable"></table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CRIB TABLE -->
+
+        <section class="panel crib-table-panel">
+
+            <h2>
+                Crib League
+            </h2>
+
+            <div class="table-wrap">
+
+                <table id="cribTable"></table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- GALLON TABLE -->
+
+        <section class="panel gallon-table-panel">
+
+            <h2>
+                Gallon League
+            </h2>
+
+            <div class="table-wrap">
+
+                <table id="gallonTable"></table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        Read-only league information.
+        Results are entered in the league workbook
+        and automatically reflected here.
+
+    </footer>
+
+
+    <script src="app.js?v=4"></script>
+
+</body>
+
+</html>
