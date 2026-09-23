@@ -583,6 +583,9 @@ function renderFixtures(fixtures) {
             section.className =
                 "fixture-week";
 
+            /* Store the fixture date so the page can jump to the next date */
+            section.dataset.fixtureDate = date;
+
 
             const colourClass =
                 getFixtureSectionClass(
@@ -1121,6 +1124,77 @@ function renderFixtures(fixtures) {
 
 
 /* =========================================================
+   JUMP TO FIRST UPCOMING FIXTURE DATE
+   ========================================================= */
+
+function scrollToUpcomingFixtures() {
+
+    const sections =
+        document.querySelectorAll(
+            ".fixture-week[data-fixture-date]"
+        );
+
+    if (!sections.length) {
+        return;
+    }
+
+    const now = new Date();
+    const today = new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDate()
+    );
+
+    let target = null;
+
+    sections.forEach(section => {
+
+        if (target) {
+            return;
+        }
+
+        const value =
+            String(
+                section.dataset.fixtureDate || ""
+            ).trim();
+
+        const match =
+            value.match(
+                /^(\d{1,2})\/(\d{1,2})\/(\d{2}|\d{4})$/
+            );
+
+        if (!match) {
+            return;
+        }
+
+        let year = Number(match[3]);
+
+        if (year < 100) {
+            year += 2000;
+        }
+
+        const fixtureDate = new Date(
+            year,
+            Number(match[2]) - 1,
+            Number(match[1])
+        );
+
+        if (fixtureDate >= today) {
+            target = section;
+        }
+
+    });
+
+    if (target) {
+        target.scrollIntoView({
+            behavior: "auto",
+            block: "start"
+        });
+    }
+}
+
+
+/* =========================================================
    LAST UPDATED TEXT
    ========================================================= */
 
@@ -1297,6 +1371,13 @@ async function loadSiteData() {
                     : []
 
             );
+
+
+            /* On first load, start at the next fixture date instead of old results */
+            if (!window.__fixturesInitialJumpDone) {
+                scrollToUpcomingFixtures();
+                window.__fixturesInitialJumpDone = true;
+            }
 
         }
 
