@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -10,49 +11,55 @@
     >
 
     <title>
-        Failsworth Darts & Crib League Tables
+        Failsworth Darts & Crib League Fixtures
     </title>
 
     <link
         rel="stylesheet"
         href="styles.css"
     >
+
 </head>
 
 
-<body class="tables-page">
+<body class="fixtures-page">
+
 
     <header class="site-header">
 
         <p class="eyebrow">
-            LIVE STANDINGS
+            LEAGUE FIXTURES
         </p>
 
         <h1>
-            Darts & Crib League Tables
+            Failsworth Darts & Crib League
         </h1>
 
+
         <nav class="top-nav">
+
             <a
-                href="fixtures.html"
-                class="fixtures-button"
+                href="index.html"
+                class="fixtures-button active"
             >
                 Fixtures
             </a>
 
             <a
-                href="index.html"
-                class="tables-button active"
+                href="tables.html"
+                class="tables-button"
             >
                 Tables
             </a>
+
         </nav>
+
 
         <p
             id="updated"
             class="updated"
         >
-            Loading league tables...
+            Loading fixtures...
         </p>
 
     </header>
@@ -60,73 +67,21 @@
 
     <main class="page-wrap">
 
-
-        <!-- DARTS TABLE -->
-
-        <section class="panel darts-table-panel">
-
-            <h2>
-                Darts League
-            </h2>
-
-            <div class="table-wrap">
-
-                <table id="dartsTable"></table>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- CRIB TABLE -->
-
-        <section class="panel crib-table-panel">
-
-            <h2>
-                Crib League
-            </h2>
-
-            <div class="table-wrap">
-
-                <table id="cribTable"></table>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- GALLON TABLE -->
-
-        <section class="panel gallon-table-panel">
-
-            <h2>
-                Gallon League
-            </h2>
-
-            <div class="table-wrap">
-
-                <table id="gallonTable"></table>
-
-            </div>
-
-        </section>
-
+        <div id="fixtures"></div>
 
     </main>
 
 
     <footer class="site-footer">
 
-        Read-only league information.
-        Results are entered in the league workbook
-        and automatically reflected here.
+        Played fixtures are shown in grey.
+        Results are entered separately and reflected
+        in the league tables.
 
     </footer>
 
 
-    <script src="app.js?v=3"></script>
+     <script src="app.js?v=4"></script>
 
 </body>
 
