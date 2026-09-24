@@ -1509,37 +1509,35 @@ td:first-child {
 
     }
 
-   /* =========================================
-   FIXED NAVIGATION BUTTONS
-   ========================================= */
+ /* =========================================================
+   ALWAYS-VISIBLE FIXTURES / TABLES NAVIGATION
+   ========================================================= */
 
 .top-nav {
-    position: fixed;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
 
-    top: 0;
-    left: 0;
+    width: 100% !important;
 
-    width: 100%;
+    z-index: 9999 !important;
 
-    z-index: 1000;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    gap: 12px !important;
 
-    gap: 12px;
+    margin: 0 !important;
+    padding: 12px 15px !important;
 
-    margin: 0;
-    padding: 12px 15px;
+    background: #28282B !important;
 
-    background: #28282B;
-
-    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
 }
 
-/* Make room for the fixed buttons */
+/* Prevent the fixed navigation covering the top of the page */
 
 body {
     padding-top: 70px;
-}
 }
