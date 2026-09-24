@@ -1509,4 +1509,37 @@ td:first-child {
 
     }
 
+   /* =========================================
+   FIXED NAVIGATION BUTTONS
+   ========================================= */
+
+.top-nav {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 0;
+    padding: 12px 15px;
+
+    background: #28282B;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+/* Make room for the fixed buttons */
+
+body {
+    padding-top: 70px;
+}
 }
