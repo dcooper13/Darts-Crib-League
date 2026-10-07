@@ -748,7 +748,7 @@
       "bye": false,
       "date": "17/11/26",
       "homeTeam": "Gardeners Arms",
-      "notes": "At Willow",
+      "notes": "",
       "played": false,
       "type": "Cup 1st Round"
     },
@@ -757,7 +757,7 @@
       "bye": false,
       "date": "17/11/26",
       "homeTeam": "Falconers",
-      "notes": "At Horseshoe",
+      "notes": "",
       "played": false,
       "type": "Cup 1st Round"
     },
@@ -766,7 +766,7 @@
       "bye": false,
       "date": "17/11/26",
       "homeTeam": "Horseshoe",
-      "notes": "At Railway Hollinwood",
+      "notes": "",
       "played": false,
       "type": "Cup 1st Round"
     },
@@ -1563,5 +1563,5 @@
       "type": "Finals Night"
     }
   ],
-  "updated": "2026-10-07T12:15:07.422Z"
+  "updated": "2026-10-07T12:20:04.922Z"
 }
