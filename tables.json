@@ -707,18 +707,18 @@
       "type": "League"
     },
     {
-      "awayTeam": "",
+      "awayTeam": "Houghton Arms",
       "bye": false,
       "date": "17/11/26",
-      "homeTeam": "",
+      "homeTeam": "Gardeners Arms",
       "played": false,
       "type": "Cup 1st Round"
     },
     {
-      "awayTeam": "",
+      "awayTeam": "Railway Hollinwood",
       "bye": false,
       "date": "17/11/26",
-      "homeTeam": "",
+      "homeTeam": "Falconers",
       "played": false,
       "type": "Cup 1st Round"
     },
@@ -1435,5 +1435,5 @@
       "type": "Finals Night"
     }
   ],
-  "updated": "2026-10-07T09:25:06.107Z"
+  "updated": "2026-10-07T09:30:08.539Z"
 }
