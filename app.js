@@ -1102,7 +1102,7 @@ if (notes) {
         noteText
     );
 
-
+}
 
                     const awayTeam =
                         document.createElement(
