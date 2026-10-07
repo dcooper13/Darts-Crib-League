@@ -838,7 +838,7 @@ td:first-child {
 
     grid-template-columns:
         minmax(0, 1fr)
-        55px
+        150px
         minmax(0, 1fr);
 
     align-items:
@@ -920,6 +920,30 @@ td:first-child {
     text-align:
         center;
 
+}
+
+/* FIXTURE V + VENUE NOTE */
+
+.fixture-v {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+}
+
+.fixture-v-text {
+    line-height: 1;
+}
+
+.fixture-note {
+    margin-top: 5px;
+    color: #697a90;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: center;
+    white-space: nowrap;
 }
 
 
@@ -1398,7 +1422,7 @@ td:first-child {
 
         grid-template-columns:
             minmax(0, 1fr)
-            26px
+            120px
             minmax(0, 1fr);
 
         min-height:
@@ -1428,6 +1452,11 @@ td:first-child {
             13px;
 
     }
+
+   .fixture-note {
+    margin-top: 4px;
+    font-size: 11px;
+}
 
 
     .bye-team,
