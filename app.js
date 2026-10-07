@@ -1049,16 +1049,58 @@ function renderFixtures(fixtures) {
 
                     const versus =
                         document.createElement(
-                            "div"
+                           "div"
                         );
 
 
-                    versus.className =
-                        "fixture-v";
+versus.className =
+    "fixture-v";
 
 
-                    versus.textContent =
-                        "v";
+const versusText =
+    document.createElement(
+        "div"
+    );
+
+
+versusText.className =
+    "fixture-v-text";
+
+
+versusText.textContent =
+    "v";
+
+
+versus.appendChild(
+    versusText
+);
+
+
+const notes =
+    String(
+        match.notes || ""
+    ).trim();
+
+
+if (notes) {
+
+    const noteText =
+        document.createElement(
+            "div"
+        );
+
+
+    noteText.className =
+        "fixture-note";
+
+
+    noteText.textContent =
+        notes;
+
+
+    versus.appendChild(
+        noteText
+    );
 
 
 
