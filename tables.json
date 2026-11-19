@@ -86,6 +86,18 @@
     ],
     [
       3,
+      "Houghton Arms",
+      9,
+      5,
+      0,
+      4,
+      31,
+      25,
+      6,
+      10
+    ],
+    [
+      4,
       "Falconers",
       8,
       5,
@@ -97,24 +109,12 @@
       10
     ],
     [
-      4,
-      "Houghton Arms",
-      8,
-      4,
-      0,
-      4,
-      31,
-      25,
-      6,
-      8
-    ],
-    [
       5,
       "Railway Hollinwood",
-      7,
+      8,
       2,
       0,
-      5,
+      6,
       22,
       27,
       -5,
@@ -135,10 +135,10 @@
     [
       7,
       "Willow Tavern",
-      7,
+      8,
       1,
       0,
-      6,
+      7,
       14,
       35,
       -21,
@@ -218,10 +218,22 @@
     ],
     [
       3,
-      "Houghton Arms",
+      "Willow Tavern",
       8,
       4,
       4,
+      26,
+      23,
+      3,
+      8,
+      ""
+    ],
+    [
+      4,
+      "Houghton Arms",
+      9,
+      4,
+      5,
       27,
       29,
       -2,
@@ -229,19 +241,19 @@
       ""
     ],
     [
+      5,
+      "Railway Hollinwood",
+      8,
       4,
-      "Willow Tavern",
-      7,
-      3,
       4,
-      26,
       23,
-      3,
-      6,
+      26,
+      -3,
+      8,
       ""
     ],
     [
-      5,
+      6,
       "Falconers",
       8,
       3,
@@ -249,18 +261,6 @@
       27,
       29,
       -2,
-      6,
-      ""
-    ],
-    [
-      6,
-      "Railway Hollinwood",
-      7,
-      3,
-      4,
-      23,
-      26,
-      -3,
       6,
       ""
     ],
@@ -749,7 +749,7 @@
       "date": "17/11/26",
       "homeTeam": "Gardeners Arms",
       "notes": "At Falconers",
-      "played": false,
+      "played": true,
       "type": "Cup 1st Round"
     },
     {
@@ -758,7 +758,7 @@
       "date": "17/11/26",
       "homeTeam": "Falconers",
       "notes": "At Willow Tavern",
-      "played": false,
+      "played": true,
       "type": "Cup 1st Round"
     },
     {
@@ -767,7 +767,7 @@
       "date": "17/11/26",
       "homeTeam": "Horseshoe",
       "notes": "At Railway Hollinwood",
-      "played": false,
+      "played": true,
       "type": "Cup 1st Round"
     },
     {
@@ -1563,5 +1563,5 @@
       "type": "Finals Night"
     }
   ],
-  "updated": "2026-11-19T12:35:06.426Z"
+  "updated": "2026-11-19T12:40:04.414Z"
 }
