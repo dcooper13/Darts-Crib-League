@@ -865,7 +865,7 @@
       "bye": false,
       "date": "08/12/26",
       "homeTeam": "N.H. Nomads",
-      "notes": "",
+      "notes": "Main",
       "played": false,
       "type": "Darts Cup Semi"
     },
@@ -874,61 +874,61 @@
       "bye": false,
       "date": "08/12/26",
       "homeTeam": "Horseshoe",
-      "notes": "",
+      "notes": "Main",
       "played": false,
       "type": "Darts Cup Semi"
     },
     {
-      "awayTeam": "",
+      "awayTeam": "Gardeners Arms",
       "bye": false,
       "date": "08/12/26",
-      "homeTeam": "",
-      "notes": "",
+      "homeTeam": "Willow Tavern",
+      "notes": "Sub",
       "played": false,
       "type": "Darts Cup Semi"
     },
     {
-      "awayTeam": "",
-      "bye": false,
+      "awayTeam": "BYE",
+      "bye": true,
       "date": "08/12/26",
-      "homeTeam": "",
-      "notes": "",
+      "homeTeam": "Railway Hollinwood",
+      "notes": "Sub",
       "played": false,
       "type": "Darts Cup Semi"
     },
     {
-      "awayTeam": "",
+      "awayTeam": "Gardeners Arms",
       "bye": false,
       "date": "15/12/26",
-      "homeTeam": "",
-      "notes": "",
+      "homeTeam": "N.H. Nomads",
+      "notes": "Main",
       "played": false,
       "type": "Crib Cup Semi"
     },
     {
-      "awayTeam": "",
+      "awayTeam": "Railway Hollinwood",
       "bye": false,
       "date": "15/12/26",
-      "homeTeam": "",
-      "notes": "",
+      "homeTeam": "Willow Tavern",
+      "notes": "Main",
       "played": false,
       "type": "Crib Cup Semi"
     },
     {
-      "awayTeam": "",
+      "awayTeam": "Horseshoe",
       "bye": false,
       "date": "15/12/26",
-      "homeTeam": "",
-      "notes": "",
+      "homeTeam": "Falconers",
+      "notes": "Sub",
       "played": false,
       "type": "Crib Cup Semi"
     },
     {
-      "awayTeam": "",
-      "bye": false,
+      "awayTeam": "BYE",
+      "bye": true,
       "date": "15/12/26",
-      "homeTeam": "",
-      "notes": "",
+      "homeTeam": "Houghton Arms",
+      "notes": "Sub",
       "played": false,
       "type": "Crib Cup Semi"
     },
@@ -1077,10 +1077,10 @@
       "type": "Crib Cup Final"
     },
     {
-      "awayTeam": "",
-      "bye": false,
+      "awayTeam": "BYE",
+      "bye": true,
       "date": "28/01/27",
-      "homeTeam": "",
+      "homeTeam": "Falconers",
       "notes": "",
       "played": false,
       "type": "Meeting"
@@ -1374,10 +1374,10 @@
       "type": "League"
     },
     {
-      "awayTeam": "",
-      "bye": false,
+      "awayTeam": "BYE",
+      "bye": true,
       "date": "01/04/27",
-      "homeTeam": "",
+      "homeTeam": "Railway Hollinwood",
       "notes": "",
       "played": false,
       "type": "Meeting"
@@ -1563,5 +1563,5 @@
       "type": "Finals Night"
     }
   ],
-  "updated": "2026-11-27T12:15:09.479Z"
+  "updated": "2026-11-27T12:20:08.166Z"
 }
