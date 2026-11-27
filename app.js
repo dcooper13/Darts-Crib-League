@@ -1003,23 +1003,50 @@ function renderFixtures(fixtures) {
 
 
                         byeText.textContent =
-                            "BYE";
+    "BYE";
 
 
-
-                        row.appendChild(
-                            team
-                        );
-
-
-                        row.appendChild(
-                            byeText
-                        );
+row.appendChild(
+    team
+);
 
 
-                        list.appendChild(
-                            row
-                        );
+row.appendChild(
+    byeText
+);
+
+
+/* DISPLAY NOTES FOR BYE FIXTURES */
+
+const byeNotes =
+    String(
+        match.notes || ""
+    ).trim();
+
+
+if (byeNotes) {
+
+    const byeNoteText =
+        document.createElement(
+            "div"
+        );
+
+    byeNoteText.className =
+        "fixture-note";
+
+    byeNoteText.textContent =
+        byeNotes;
+
+    row.appendChild(
+        byeNoteText
+    );
+
+}
+
+
+list.appendChild(
+    row
+);
 
 
                         return;
