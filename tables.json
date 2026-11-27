@@ -67,9 +67,9 @@
       8,
       0,
       1,
-      45,
-      18,
-      27,
+      44.5,
+      18.5,
+      26,
       16
     ],
     [
@@ -139,9 +139,9 @@
       1,
       0,
       8,
-      16,
-      40,
-      -24,
+      16.5,
+      39.5,
+      -23,
       2
     ],
     [
@@ -861,19 +861,19 @@
       "type": "League"
     },
     {
-      "awayTeam": "",
+      "awayTeam": "Houghton Arms",
       "bye": false,
       "date": "08/12/26",
-      "homeTeam": "",
+      "homeTeam": "N.H. Nomads",
       "notes": "",
       "played": false,
       "type": "Darts Cup Semi"
     },
     {
-      "awayTeam": "",
+      "awayTeam": "Falconers",
       "bye": false,
       "date": "08/12/26",
-      "homeTeam": "",
+      "homeTeam": "Horseshoe",
       "notes": "",
       "played": false,
       "type": "Darts Cup Semi"
@@ -1563,5 +1563,5 @@
       "type": "Finals Night"
     }
   ],
-  "updated": "2026-11-27T12:10:07.855Z"
+  "updated": "2026-11-27T12:15:09.479Z"
 }
